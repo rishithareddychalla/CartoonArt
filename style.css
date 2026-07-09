@@ -109,7 +109,7 @@ input[name="nav"] {
 /* Navigation Menu styling */
 .ui-container {
   position: absolute;
-  bottom: 25px;
+  top: 25px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -334,7 +334,7 @@ input[name="nav"] {
 #nav-octocat:checked ~ .scene .octocat-wrap { display: flex; }
 #nav-mario:checked ~ .scene .mario-wrap { display: flex; }
 #nav-groot:checked ~ .scene .groot-wrap { display: flex; }
-#nav-toothless:checked ~ .scene .toothless-wrap { display: flex; transform: translateY(-45px) scale(0.9); }
+#nav-toothless:checked ~ .scene .toothless-wrap { display: flex; transform: translateY(15px) scale(0.95); }
 
 /* ==========================================================================
    5. PIKACHU DETAILED ART STYLING
