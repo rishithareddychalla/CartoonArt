@@ -862,14 +862,15 @@ input[name="nav"] {
   width: 205px; height: 215px;
   background: 
     repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 5px, rgba(45, 32, 25, 0.08) 5px, rgba(45, 32, 25, 0.08) 7px),
-    linear-gradient(to bottom, #7bad49 0%, #4a752c 10%, #765643 14%, var(--g-real-brown) 40%, var(--g-real-brown-dark) 100%);
-  clip-path: polygon(0% 35%, 4% 23%, 8% 13%, 16% 22%, 22% 10%, 35% 26%, 48% 4%, 56% 20%, 70% 6%, 82% 22%, 92% 12%, 100% 35%, 96% 70%, 82% 90%, 50% 98%, 18% 90%, 4% 70%);
+    radial-gradient(circle at 45% 35%, var(--g-real-brown-light) 0%, var(--g-real-brown) 50%, var(--g-real-brown-dark) 100%);
+  border-radius: 110px 110px 75px 75px / 120px 120px 85px 85px;
   z-index: 10; 
   box-shadow: 
     inset 10px 10px 20px rgba(255, 255, 255, 0.08), 
     inset -10px -10px 25px rgba(0, 0, 0, 0.65), 
     0 15px 35px rgba(0, 0, 0, 0.45);
   animation: headNod 8s infinite ease-in-out;
+  overflow: visible;
 }
 
 /* Wood textures/grain lines on face */
@@ -916,32 +917,30 @@ input[name="nav"] {
   filter: blur(5px); z-index: 1; pointer-events: none;
 }
 
-/* Mossy wood top sprouts (Rear Layer of the Crown) */
+/* Mossy wood top sprouts */
 .groot .head-top-bark {
-  position: absolute; top: 0; width: 100%; height: 60px; z-index: -1;
+  position: absolute; top: -25px; width: 100%; height: 45px; z-index: 2;
 }
 .groot .bark-sprout {
-  position: absolute; bottom: 0; width: 42px; height: 65px;
-  background: #362218;
-  border-radius: 10px;
-  opacity: 0.8;
-  box-shadow: inset -2px -2px 5px rgba(0,0,0,0.5);
+  position: absolute; bottom: 0; width: 46px; height: 65px;
+  background: linear-gradient(to bottom, #7bad49 0%, #4a752c 30%, var(--g-real-brown) 60%, var(--g-real-brown-dark) 100%);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.15), inset -2px -2px 5px rgba(0,0,0,0.3);
 }
-.groot .s1 { left: -10px; transform: rotate(-25deg); height: 50px; }
-.groot .s2 { left: 30px; transform: rotate(-10deg); height: 60px; }
-.groot .s3 { left: 70px; transform: rotate(5deg); height: 62px; }
-.groot .s4 { right: 30px; transform: rotate(15deg); height: 60px; }
-.groot .s5 { right: -10px; transform: rotate(25deg); height: 52px; }
+.groot .s1 { left: 4px; transform: rotate(-28deg); height: 60px; clip-path: polygon(0% 100%, 25% 10%, 65% 0%, 100% 15%, 85% 100%); }
+.groot .s2 { left: 42px; transform: rotate(-12deg); height: 70px; clip-path: polygon(0% 100%, 30% 0%, 75% 10%, 100% 20%, 90% 100%); }
+.groot .s3 { left: 82px; transform: rotate(0deg); height: 72px; clip-path: polygon(0% 100%, 10% 15%, 50% 0%, 90% 10%, 100% 100%); }
+.groot .s4 { right: 42px; transform: rotate(12deg); height: 70px; clip-path: polygon(10% 100%, 0% 20%, 25% 10%, 70% 0%, 100% 100%); }
+.groot .s5 { right: 4px; transform: rotate(28deg); height: 62px; clip-path: polygon(15% 100%, 0% 15%, 35% 0%, 75% 10%, 100% 100%); }
 
-/* Sprouting Leaves on Head (Viewer's Left side cluster) */
+/* Sprouting Leaves on Head */
 .groot .head-leaf {
   position: absolute; width: 13px; height: 24px;
   background: radial-gradient(circle, #7bad49 0%, #4a752c 100%);
-  border-radius: 100% 0 100% 0; box-shadow: 0 3px 6px rgba(0,0,0,0.2); z-index: 15;
+  border-radius: 100% 0 100% 0; box-shadow: 0 3px 6px rgba(0,0,0,0.2); z-index: 3;
 }
-.groot .hl-1 { top: -8px; left: 22px; transform: rotate(-55deg); }
-.groot .hl-2 { top: 0px; left: 6px; transform: rotate(-75deg); width: 11px; height: 20px; }
-.groot .hl-3 { top: 16px; left: -10px; transform: rotate(-100deg); width: 10px; height: 18px; }
+.groot .hl-1 { top: -20px; left: 32px; transform: rotate(-35deg); }
+.groot .hl-2 { top: -22px; right: 52px; transform: rotate(45deg); width: 10px; height: 20px; }
+.groot .hl-3 { top: -10px; right: 20px; transform: rotate(75deg); width: 9px; height: 18px; }
 
 /* Glassy Eyes with Warm Amber Iris Refractions */
 .groot .groot-eye {
@@ -1035,19 +1034,33 @@ input[name="nav"] {
 .groot .sh-1 { left: 12px; top: 35px; width: 45px; height: 45px; transform: rotate(-25deg); }
 .groot .sh-2 { right: 10px; bottom: 30px; width: 35px; height: 35px; transform: rotate(45deg); }
 
-/* Cylindrical Arm Shading */
+/* Overlapping Branch Segments for Arms */
 .groot .groot-arm {
   position: absolute; width: 26px; height: 110px;
-  background: linear-gradient(to right, #251610 0%, #6d4b38 30%, #906954 60%, #5e3f2e 85%, #251610 100%);
-  border-radius: 13px; z-index: 5;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3), inset -2px -2px 6px rgba(0,0,0,0.3);
+  background: transparent; z-index: 5;
 }
 .groot .groot-arm::after {
-  content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%);
-  width: 24px; height: 12px;
+  content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+  width: 28px; height: 14px;
   background: #5e3f2e;
-  clip-path: polygon(0% 100%, 20% 20%, 40% 100%, 50% 10%, 65% 100%, 80% 25%, 100% 100%);
+  clip-path: polygon(0% 100%, 20% 15%, 40% 100%, 55% 5%, 70% 100%, 85% 20%, 100% 100%);
+  z-index: 6;
 }
+.groot .arm-segment {
+  position: absolute;
+  background: linear-gradient(to right, #251610 0%, #6d4b38 30%, #906954 60%, #5e3f2e 85%, #251610 100%);
+  border-radius: 12px;
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+}
+.groot .arm-segment::after {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: repeating-linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,0) 2px, rgba(45,32,25,0.15) 2px, rgba(45,32,25,0.15) 3px);
+  border-radius: inherit;
+}
+.groot .as1 { top: 0; left: 2px; width: 22px; height: 50px; transform: rotate(-5deg); }
+.groot .as2 { top: 35px; left: 4px; width: 20px; height: 50px; transform: rotate(5deg); }
+.groot .as3 { top: 70px; left: 0; width: 24px; height: 45px; transform: rotate(-8deg); }
+
 .groot .arm-l { left: -10px; top: 15px; transform: rotate(24deg); transform-origin: top center; animation: armSwayLeft 5s infinite ease-in-out; }
 .groot .arm-r { right: -25px; top: 15px; transform: rotate(-130deg); transform-origin: top center; animation: grootWave 2.5s infinite ease-in-out; }
 
@@ -1085,22 +1098,41 @@ input[name="nav"] {
 .groot .sl-2 { right: -8px; top: 28px; transform: rotate(85deg); }
 .groot .sl-3 { right: 8px; top: 46px; transform: rotate(135deg); width: 8px; height: 15px; }
 
-/* Legs with Root Flare */
+/* Legs with Overlapping Root Cords & Flared Toes */
 .groot .groot-leg {
   position: absolute; bottom: 0; width: 36px; height: 65px;
-  background: linear-gradient(to right, #251610 0%, #684837 30%, #8c6753 50%, #684837 75%, #251610 100%);
-  border-radius: 18px 18px 0 0;
-  box-shadow: inset -3px -3px 8px rgba(0,0,0,0.4);
+  background: transparent;
 }
 .groot .leg-l { left: 24px; }
 .groot .leg-r { right: 24px; }
 
+.groot .leg-cord {
+  position: absolute;
+  background: linear-gradient(to right, #251610 0%, #684837 35%, #8c6753 60%, #503421 85%, #251610 100%);
+  border-radius: 9px;
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+}
+.groot .leg-cord::after {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: repeating-linear-gradient(90deg, rgba(0,0,0,0), rgba(0,0,0,0) 2px, rgba(45,32,25,0.12) 2px, rgba(45,32,25,0.12) 3px);
+  border-radius: inherit;
+}
+.groot .lc1 { left: 0; top: 0; width: 16px; height: 60px; transform: rotate(4deg); }
+.groot .lc2 { left: 10px; top: 5px; width: 18px; height: 55px; transform: rotate(-4deg); }
+.groot .lc3 { left: 20px; top: 0; width: 16px; height: 60px; transform: rotate(8deg); }
+
 .groot .root-flare {
-  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-  width: 48px; height: 28px;
-  background: linear-gradient(to right, #251610 0%, #684837 30%, #8c6753 50%, #684837 75%, #251610 100%);
-  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-  border-radius: 0 0 8px 8px;
+  position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%);
+  width: 52px; height: 26px;
+  background: transparent;
+  z-index: 6;
+}
+.groot .root-flare::before {
+  content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to right, #251610, #684837, #251610);
+  clip-path: polygon(0% 100%, 15% 20%, 30% 100%, 50% 10%, 70% 100%, 85% 20%, 100% 100%);
+  border-radius: 0 0 6px 6px;
+  box-shadow: inset 1px 1px 3px rgba(255,255,255,0.1);
 }
 
 .groot .l4 { left: -3px; top: 20px; transform: rotate(-30deg); }
