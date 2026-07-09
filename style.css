@@ -355,11 +355,22 @@ input[name="nav"] {
   animation: headNod 8s infinite ease-in-out;
 }
 
+.pikachu .head-shadow {
+  position: absolute;
+  bottom: -22px; left: 50%; transform: translateX(-50%);
+  width: 160px; height: 35px;
+  background: radial-gradient(ellipse at center, rgba(135, 78, 0, 0.45) 0%, transparent 80%);
+  filter: blur(4px);
+  z-index: 9;
+}
+
 .pikachu .ear-left-container, .pikachu .ear-right-container {
   position: absolute; top: -95px; width: 75px; height: 170px; z-index: -1;
 }
-.pikachu .ear-left-container { left: -20px; transform: rotate(-32deg); transform-origin: bottom right; animation: earTwitchLeft 6s infinite ease-in-out; }
-.pikachu .ear-right-container { right: -20px; transform: rotate(32deg); transform-origin: bottom left; animation: earTwitchRight 7s infinite ease-in-out; }
+.pikachu .ear-left-container { left: -20px; transform: rotate(-38deg); transform-origin: bottom right; animation: earTwitchLeft 6s infinite ease-in-out; }
+/* Right ear points much more horizontally in the reference image */
+.pikachu .ear-right-container { right: -25px; transform: rotate(52deg); transform-origin: bottom left; animation: earTwitchRight 7s infinite ease-in-out; }
+
 .pikachu .ear {
   position: relative; width: 100%; height: 100%;
   background: radial-gradient(ellipse at center, var(--p-yellow-light) 0%, var(--p-yellow) 50%, var(--p-yellow-dark) 100%);
@@ -377,7 +388,7 @@ input[name="nav"] {
 
 .pikachu .eye {
   position: absolute; top: 58px; width: 44px; height: 44px;
-  background: radial-gradient(circle at 35% 35%, #4b3431 0%, #2c1d1a 50%, #0d0605 100%);
+  background: radial-gradient(circle at 50% 80%, #5d351a 0%, #150b06 60%, #000000 100%);
   border-radius: 50%; z-index: 12; overflow: hidden;
   box-shadow: 0 3px 8px rgba(0,0,0,0.3), inset -3px -3px 8px rgba(0,0,0,0.6);
 }
@@ -395,7 +406,7 @@ input[name="nav"] {
 
 .pikachu .nose {
   position: absolute; top: 92px; left: 50%; transform: translateX(-50%);
-  width: 12px; height: 7px; background: #1e1e1e;
+  width: 10px; height: 6px; background: #222;
   clip-path: polygon(0 0, 100% 0, 50% 100%); border-radius: 2px; z-index: 12;
 }
 
@@ -414,7 +425,7 @@ input[name="nav"] {
 }
 
 .pikachu .mouth-container { position: absolute; top: 100px; left: 50%; transform: translateX(-50%); width: 50px; height: 35px; z-index: 11; }
-.pikachu .mouth { position: absolute; top: 0; width: 26px; height: 16px; border: 3.5px solid var(--p-mouth-dark); background: var(--p-yellow); border-top: transparent; z-index: 10; }
+.pikachu .mouth { position: absolute; top: 0; width: 26px; height: 16px; border: 2px solid #3c1e0e; background: var(--p-yellow); border-top: transparent; z-index: 10; }
 .pikachu .mouth-lip-left { left: 0px; border-radius: 0 0 0 14px / 0 0 0 12px; border-right: transparent; transform: rotate(-15deg); }
 .pikachu .mouth-lip-right { right: 0px; border-radius: 0 0 14px 0 / 0 0 12px 0; border-left: transparent; transform: rotate(15deg); }
 .pikachu .mouth-open {
@@ -440,35 +451,57 @@ input[name="nav"] {
 .pikachu .s-top { top: 75px; width: 45px; height: 25px; transform: rotate(-8deg); }
 .pikachu .s-bottom { top: 120px; width: 55px; height: 28px; transform: rotate(-5deg); }
 
-.pikachu .arm-left-container, .pikachu .arm-right-container { position: absolute; top: 55px; width: 65px; height: 110px; z-index: 15; }
-.pikachu .arm-left-container { left: -12px; transform-origin: top right; animation: armSwayLeft 5s infinite ease-in-out; }
-.pikachu .arm-right-container { right: -12px; transform-origin: top left; animation: armSwayRight 5s infinite ease-in-out; }
+/* Front-resting arms on the belly matching the reference image */
+.pikachu .arm-left-container, .pikachu .arm-right-container { position: absolute; top: 115px; width: 50px; height: 105px; z-index: 15; }
+.pikachu .arm-left-container { left: 45px; transform-origin: top center; animation: armSwayLeft 5s infinite ease-in-out; }
+.pikachu .arm-right-container { right: 45px; transform-origin: top center; animation: armSwayRight 5s infinite ease-in-out; }
 .pikachu .arm {
   position: relative; width: 100%; height: 100%;
   background: radial-gradient(ellipse at center, var(--p-yellow-light) 0%, var(--p-yellow) 60%, var(--p-yellow-dark) 100%);
-  box-shadow: inset -4px -6px 10px rgba(204, 132, 0, 0.4);
+  box-shadow: inset 3px 3px 6px rgba(255,255,255,0.4), inset -4px -6px 10px rgba(204, 132, 0, 0.45), 2px 5px 8px rgba(135,78,0,0.25);
 }
-.pikachu .arm-left { border-radius: 50% 30% 30% 60% / 60% 30% 30% 60%; transform: rotate(35deg); }
-.pikachu .arm-right { border-radius: 30% 50% 60% 30% / 30% 60% 60% 30%; transform: rotate(-35deg); }
+.pikachu .arm-left { border-radius: 50% 50% 30% 50% / 70% 70% 30% 30%; transform: rotate(10deg); }
+.pikachu .arm-right { border-radius: 50% 50% 50% 30% / 70% 70% 30% 30%; transform: rotate(-10deg); }
+
+.pikachu .paw {
+  position: absolute; bottom: 0px; left: 50%; transform: translateX(-50%);
+  width: 34px; height: 10px; display: flex; justify-content: space-between;
+}
+.pikachu .claw {
+  width: 4px; height: 6px; background: var(--p-yellow);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  box-shadow: inset 1px 1px 1px rgba(255,255,255,0.4);
+}
 
 .pikachu .foot {
-  position: absolute; bottom: -15px; width: 50px; height: 70px;
-  background: radial-gradient(ellipse at center, var(--p-yellow-light) 0%, var(--p-yellow) 60%, var(--p-yellow-dark) 100%);
+  position: absolute; bottom: -8px; width: 55px; height: 35px;
+  background: radial-gradient(ellipse at center, var(--p-yellow) 60%, var(--p-yellow-dark) 100%);
+  box-shadow: inset 2px 2px 4px rgba(255,255,255,0.4), inset -2px -2px 4px rgba(135,78,0,0.3), 0 3px 6px rgba(0,0,0,0.15);
   z-index: 5;
 }
-.pikachu .foot-left { left: 20px; border-radius: 50% 30% 30% 60% / 60% 30% 35% 65%; transform: rotate(-10deg); }
-.pikachu .foot-right { right: 20px; border-radius: 30% 50% 60% 30% / 30% 60% 65% 35%; transform: rotate(10deg); }
+.pikachu .foot-left { left: 55px; border-radius: 50% 30% 30% 60% / 60% 30% 35% 65%; transform: rotate(-5deg); }
+.pikachu .foot-right { right: 55px; border-radius: 30% 50% 60% 30% / 30% 60% 65% 35%; transform: rotate(5deg); }
 
-.pikachu .tail-container { position: absolute; bottom: 60px; left: -90px; width: 220px; height: 300px; z-index: -2; transform-origin: bottom right; animation: tailWag 5s infinite ease-in-out; }
+.pikachu .foot .toe {
+  position: absolute; bottom: -1px; width: 10px; height: 10px;
+  background: var(--p-yellow); border-radius: 50%;
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.5), inset -1px -1px 2px rgba(135,78,0,0.2);
+}
+.pikachu .foot .t1 { left: 8px; }
+.pikachu .foot .t2 { left: 20px; }
+.pikachu .foot .t3 { left: 32px; }
+
+/* Mirrored right-side tail to exactly match the reference render */
+.pikachu .tail-container { position: absolute; bottom: 65px; right: -95px; width: 220px; height: 300px; z-index: -2; transform-origin: bottom left; animation: tailWag 5s infinite ease-in-out; }
 .pikachu .tail { position: relative; width: 100%; height: 100%; }
 .pikachu .tail-segment { position: absolute; box-shadow: inset -3px -3px 8px rgba(0,0,0,0.25); }
-.pikachu .t-sec-1 { bottom: 0px; right: 10px; width: 32px; height: 50px; background: var(--p-brown); transform: rotate(30deg); border-radius: 5px; }
-.pikachu .t-sec-2 { bottom: 35px; right: 25px; width: 36px; height: 60px; background: linear-gradient(to top, var(--p-brown) 0%, var(--p-yellow) 60%); transform: rotate(-45deg); border-radius: 4px; }
-.pikachu .t-sec-3 { bottom: 75px; right: 48px; width: 44px; height: 80px; background: var(--p-yellow); transform: rotate(25deg); border-radius: 6px; }
-.pikachu .t-sec-4 { bottom: 130px; right: 85px; width: 55px; height: 110px; background: var(--p-yellow); transform: rotate(-35deg); border-radius: 8px; }
+.pikachu .t-sec-1 { bottom: 0px; left: 10px; width: 32px; height: 50px; background: var(--p-brown); transform: rotate(-30deg); border-radius: 5px; }
+.pikachu .t-sec-2 { bottom: 35px; left: 25px; width: 36px; height: 60px; background: linear-gradient(to top, var(--p-brown) 0%, var(--p-yellow) 60%); transform: rotate(45deg); border-radius: 4px; }
+.pikachu .t-sec-3 { bottom: 75px; left: 48px; width: 44px; height: 80px; background: var(--p-yellow); transform: rotate(-25deg); border-radius: 6px; }
+.pikachu .t-sec-4 { bottom: 130px; left: 85px; width: 55px; height: 110px; background: var(--p-yellow); transform: rotate(35deg); border-radius: 8px; }
 .pikachu .t-sec-5 {
-  top: 5px; left: 10px; width: 90px; height: 140px; background: var(--p-yellow); transform: rotate(15deg); border-radius: 12px;
-  clip-path: polygon(0% 0%, 100% 30%, 80% 55%, 100% 75%, 35% 100%, 55% 65%, 25% 45%);
+  top: 5px; right: 10px; width: 90px; height: 140px; background: var(--p-yellow); transform: rotate(-15deg); border-radius: 12px;
+  clip-path: polygon(100% 0%, 0% 30%, 20% 55%, 0% 75%, 65% 100%, 45% 65%, 75% 45%);
 }
 .pikachu .tail-glow {
   position: absolute; width: 100%; height: 100%; background: radial-gradient(circle, rgba(255,211,42,0.45) 0%, transparent 70%);
