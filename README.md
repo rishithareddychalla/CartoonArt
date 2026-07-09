@@ -14,16 +14,16 @@ This repository contains an extraordinary, competition-level CSS Art showcase fe
 *   **Interactions:** Hover to trigger facial expression changes, ear twitches, cheek glows, and spark emissions. Click/hold to trigger an electrical discharge, causing the entire screen to shake and flash yellow.
 
 ### 2. GitHub Octocat
-*   **Aesthetics:** Dripping whiskers with falling water drops, double puddles, S-shaped tail with suction cups, and vertical tentacle reflections.
-*   **Interactions:** Hover to wiggle tentacles, wander eyes, and see dripping streams.
+*   **Aesthetics:** 5 independently moving and rotated tentacles, volumetric head, whiskers.
+*   **Interactions:** Hover to make her smile, scale her eyes, and wiggle her tentacles.
 
 ### 3. Super Mario
 *   **Aesthetics:** Red cap with emblem, large volumetric nose, and a detailed 3D mustache.
 *   **Interactions:** Hover to trigger a waving hand animation and cap twitch.
 
 ### 4. Baby Groot (Guardians of the Galaxy)
-*   **Aesthetics:** Repeating vertical wood grain face textures, 3D cylinder vine body, root flare feet, 5 mossy top-head sprouts, and a signature 3-leaf sprout on the arm.
-*   **Interactions:** Hover to swing limbs and animate wood crack depth.
+*   **Aesthetics:** Sprouted bark textures, wood grain markings, green leaves, and vine limbs.
+*   **Interactions:** Hover to sway branches and animate wood grain depths.
 
 ### 5. Toothless (Night Fury)
 *   **Aesthetics:** Sleek jet-black skin, glowing green cat eyes with vertical slit pupils, wings, and his iconic prosthetic red tail fin.
