@@ -501,159 +501,169 @@ input[name="nav"] {
   cursor: pointer;
 }
 
-/* Tentacles */
+/* Water Puddles under character */
+.octocat .puddle-main {
+  position: absolute; bottom: 35px; left: 50%; transform: translateX(-50%);
+  width: 200px; height: 26px; background: rgba(146, 214, 255, 0.85);
+  border-radius: 50%; z-index: 3; box-shadow: 0 4px 10px rgba(146, 214, 255, 0.2);
+}
+.octocat .puddle-drip {
+  position: absolute; bottom: 30px; right: 15px;
+  width: 70px; height: 14px; background: rgba(146, 214, 255, 0.85);
+  border-radius: 50%; z-index: 3;
+}
+
+/* Reflections of tentacles in puddle */
+.octocat .tentacle-reflection {
+  position: absolute; width: 15px; height: 24px;
+  background: linear-gradient(to bottom, rgba(15, 20, 24, 0.35) 0%, transparent 100%);
+  border-radius: 8px 8px 0 0; filter: blur(1.5px); z-index: 1;
+}
+.octocat .tr-1 { left: 40px; transform: rotate(18deg) scaleY(-1); }
+.octocat .tr-2 { left: 70px; transform: rotate(8deg) scaleY(-1); }
+.octocat .tr-3 { left: 100px; transform: scaleY(-1); }
+.octocat .tr-4 { left: 130px; transform: rotate(-8deg) scaleY(-1); }
+.octocat .tr-5 { left: 160px; transform: rotate(-18deg) scaleY(-1); }
+
+/* Tentacles (legs) */
 .octocat .tentacles {
-  position: absolute; bottom: 45px; left: 50%; transform: translateX(-50%);
-  width: 240px; height: 100px; z-index: 5;
+  position: absolute; bottom: 42px; left: 50%; transform: translateX(-50%);
+  width: 240px; height: 100px; z-index: 4;
 }
 .octocat .tentacle {
-  position: absolute; width: 35px; height: 90px;
-  background: radial-gradient(ellipse at center, var(--o-dark) 0%, var(--o-dark-shade) 100%);
-  border-radius: 20px; transform-origin: top center;
-  box-shadow: inset -3px -5px 10px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.3);
-  overflow: hidden;
+  position: absolute; width: 22px; height: 75px;
+  background: #0f1418; border-radius: 11px;
 }
-/* Suction cups on tentacles */
-.octocat .tentacle::after {
-  content: ''; position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
-  width: 10px; height: 70%;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.45) 20%, transparent 25%);
-  background-size: 10px 14px;
-  background-repeat: repeat-y;
-  opacity: 0.8;
-}
-.octocat .ten-1 { left: 10px; transform: rotate(40deg); animation: tentacleMove1 6s infinite ease-in-out; }
-.octocat .ten-2 { left: 60px; transform: rotate(15deg); animation: tentacleMove2 7s infinite ease-in-out; }
-.octocat .ten-3 { left: 110px; transform: rotate(-5deg); animation: tentacleMove3 6.5s infinite ease-in-out; }
-.octocat .ten-4 { left: 160px; transform: rotate(-20deg); animation: tentacleMove4 7.2s infinite ease-in-out; }
-.octocat .ten-5 { left: 210px; transform: rotate(-45deg); animation: tentacleMove5 6.8s infinite ease-in-out; }
+.octocat .ten-1 { left: 40px; bottom: 12px; transform: rotate(18deg); transform-origin: top center; }
+.octocat .ten-2 { left: 70px; bottom: 4px; transform: rotate(8deg); transform-origin: top center; }
+.octocat .ten-3 { left: 100px; bottom: 0px; }
+.octocat .ten-4 { left: 130px; bottom: 4px; transform: rotate(-8deg); transform-origin: top center; }
+.octocat .ten-5 { left: 160px; bottom: 12px; transform: rotate(-18deg); transform-origin: top center; }
 
-/* Body */
+/* S-curved Tail with Suction Cups */
+.octocat .octo-tail {
+  position: absolute; bottom: 85px; left: 40px; width: 90px; height: 95px;
+  border: 18px solid #0f1418; border-top: transparent; border-right: transparent;
+  border-radius: 0 0 50px 50px; transform: rotate(-35deg); z-index: 4;
+}
+.octocat .suction-cup {
+  position: absolute; width: 8px; height: 8px; background: #fff;
+  border-radius: 50%; box-shadow: 1px 1px 2px rgba(0,0,0,0.15);
+}
+.octocat .sc-1 { left: -8px; bottom: 35px; }
+.octocat .sc-2 { left: -4px; bottom: 15px; }
+.octocat .sc-3 { left: 14px; bottom: -2px; }
+.octocat .sc-4 { left: 36px; bottom: -6px; }
+.octocat .sc-5 { left: 54px; bottom: -2px; }
+.octocat .sc-6 { left: 68px; bottom: 12px; }
+
+/* Body - clean black silhouette */
 .octocat .octo-body {
-  position: absolute; bottom: 85px; left: 50%; transform: translateX(-50%);
-  width: 170px; height: 160px;
-  background: radial-gradient(circle at 45% 30%, #4b6584 0%, var(--o-dark) 50%, var(--o-dark-shade) 100%);
-  border-radius: 90px 90px 70px 70px / 100px 100px 60px 60px;
-  z-index: 7; box-shadow: inset 8px 8px 15px rgba(255,255,255,0.1), 0 10px 20px rgba(0,0,0,0.25);
-}
-.octocat .suit-collar {
-  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-  width: 60px; height: 25px; background: var(--o-face);
-  clip-path: polygon(0 0, 100% 0, 50% 100%); border-radius: 0 0 10px 10px;
-}
-.octocat .suit-button {
-  position: absolute; top: 35px; left: 50%; transform: translateX(-50%);
-  width: 8px; height: 8px; background: #e74c3c; border-radius: 50%;
+  position: absolute; bottom: 90px; left: 50%; transform: translateX(-50%);
+  width: 130px; height: 100px; background: #0f1418;
+  border-radius: 65px 65px 45px 45px / 75px 75px 25px 25px; z-index: 5;
 }
 
 /* Head */
 .octocat .octo-head {
   position: absolute; top: 50px; left: 50%; transform: translateX(-50%);
-  width: 250px; height: 210px;
-  background: radial-gradient(circle at 40% 30%, #4b6584 0%, var(--o-dark) 60%, var(--o-dark-shade) 100%);
+  width: 250px; height: 215px; background: #0f1418;
   border-radius: 125px 125px 110px 110px / 115px 115px 95px 95px;
-  z-index: 10; box-shadow: inset 10px 10px 20px rgba(255,255,255,0.15), 0 12px 30px rgba(0,0,0,0.3);
-  animation: headNod 8s infinite ease-in-out;
+  z-index: 10; animation: headNod 8s infinite ease-in-out;
 }
 
 /* Ears */
 .octocat .octo-ear {
-  position: absolute; top: -35px; width: 75px; height: 100px;
-  background: radial-gradient(ellipse at center, #4b6584 0%, var(--o-dark) 70%, var(--o-dark-shade) 100%);
+  position: absolute; top: -25px; width: 65px; height: 85px; background: #0f1418;
   z-index: -1;
-  box-shadow: inset -5px -5px 10px rgba(0,0,0,0.4);
 }
-.octocat .ear-l { left: 10px; transform: rotate(-35deg); border-radius: 80% 20% 0 0 / 80% 40% 0 0; }
-.octocat .ear-r { right: 10px; transform: rotate(35deg); border-radius: 20% 80% 0 0 / 40% 80% 0 0; }
+.octocat .ear-l { left: 12px; transform: rotate(-25deg); border-radius: 80% 20% 0 0 / 80% 40% 0 0; }
+.octocat .ear-r { right: 12px; transform: rotate(25deg); border-radius: 20% 80% 0 0 / 40% 80% 0 0; }
 
-/* Face Plate */
+/* Face Plate (Rounded capsule shape) */
 .octocat .octo-face-plate {
   position: absolute; top: 25px; left: 50%; transform: translateX(-50%);
-  width: 204px; height: 154px;
-  background: radial-gradient(circle at center, #ffffff 0%, var(--o-face) 80%, var(--o-face-shade) 100%);
+  width: 204px; height: 154px; background: #ffd4c2;
+  border: 2px solid #000;
   border-radius: 102px 102px 90px 90px / 92px 92px 62px 62px;
-  box-shadow: inset -5px -5px 15px rgba(0,0,0,0.15), 0 6px 12px rgba(0,0,0,0.1);
-  overflow: hidden;
-}
-/* Blushing cheeks using pseudo-elements on the faceplate */
-.octocat .octo-face-plate::before,
-.octocat .octo-face-plate::after {
-  content: ''; position: absolute; top: 92px; width: 26px; height: 12px;
-  background: rgba(255, 118, 117, 0.25); border-radius: 50%;
-  filter: blur(2px); transition: all 0.4s ease; opacity: 0.6;
-}
-.octocat .octo-face-plate::before { left: 24px; }
-.octocat .octo-face-plate::after { right: 24px; }
-.octocat:hover .octo-face-plate::before,
-.octocat:hover .octo-face-plate::after {
-  background: rgba(255, 118, 117, 0.65); opacity: 1; transform: scale(1.15);
+  overflow: visible; z-index: 2;
 }
 
-/* Hair bangs */
-.octocat .hair-bang {
-  position: absolute; top: -10px; background: var(--o-dark-shade);
-  border-radius: 50%; z-index: 5;
-}
-.octocat .b1 { left: 20px; width: 70px; height: 45px; transform: rotate(-5deg); }
-.octocat .b2 { left: 70px; width: 80px; height: 50px; transform: rotate(5deg); }
-.octocat .b3 { right: 15px; width: 60px; height: 40px; transform: rotate(15deg); }
-
-/* Eyes */
+/* Eyes (Ovals with chestnut irises) */
 .octocat .octo-eye {
-  position: absolute; top: 55px; width: 38px; height: 38px;
-  background: radial-gradient(circle at 35% 35%, #4b4b4b 0%, var(--o-iris) 60%, #1e1e1e 100%);
-  border-radius: 50%; overflow: hidden; z-index: 2;
-  box-shadow: inset 1px 1px 4px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.15);
+  position: absolute; top: 40px; width: 44px; height: 58px; background: #fff;
+  border: 2px solid #000; border-radius: 50%; overflow: hidden; z-index: 3;
 }
-.octocat .eye-l { left: 32px; }
-.octocat .eye-r { right: 32px; }
-.octocat .octo-iris { position: relative; width: 100%; height: 100%; animation: eyeWander 8s infinite ease-in-out; }
+.octocat .eye-l { left: 34px; }
+.octocat .eye-r { right: 34px; }
+.octocat .octo-iris {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 26px; height: 36px; background: #905749; border-radius: 50%;
+  animation: eyeWander 8s infinite ease-in-out;
+}
 .octocat .octo-glint {
-  position: absolute; top: 5px; left: 7px; width: 14px; height: 14px;
+  position: absolute; top: 4px; right: 4px; width: 8px; height: 11px;
   background: #fff; border-radius: 50%;
 }
 .octocat .octo-eyelid {
   position: absolute; top: -100%; left: 0; width: 100%; height: 100%;
-  background: var(--o-face-shade); border-bottom: 2.5px solid #bdc3c7;
-  animation: blinkEye 4.5s infinite linear;
+  background: #ffd4c2; border-bottom: 2px solid #000;
+  animation: blinkEye 4.8s infinite linear;
 }
 
+/* Nose */
 .octocat .octo-nose {
   position: absolute; top: 88px; left: 50%; transform: translateX(-50%);
-  width: 8px; height: 5px; background: #2c3e50; border-radius: 50%;
+  width: 8px; height: 6px; background: #905749; border-radius: 50%; z-index: 4;
 }
 
 /* Mouth */
-.octocat .octo-mouth-container {
-  position: absolute; top: 92px; left: 50%; transform: translateX(-50%);
-  width: 40px; height: 30px;
-}
 .octocat .octo-mouth {
-  position: absolute; top: 0; width: 22px; height: 14px;
-  border: 3px solid #2c3e50; background: var(--o-face); border-top: transparent; z-index: 5;
-}
-.octocat .lip-l { left: 0px; border-radius: 0 0 0 12px; border-right: transparent; transform: rotate(-10deg); }
-.octocat .lip-r { right: 0px; border-radius: 0 0 12px 0; border-left: transparent; transform: rotate(10deg); }
-.octocat .octo-mouth-open {
-  position: absolute; top: 6px; left: 4px; width: 32px; height: 0px;
-  background: #2c3e50; border-radius: 0 0 15px 15px; overflow: hidden;
-  transition: height 0.3s ease; z-index: 2;
-}
-.octocat:hover .octo-mouth-open { height: 18px; }
-.octocat .octo-tongue {
-  position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%);
-  width: 24px; height: 12px; background: var(--o-tongue); border-radius: 12px 12px 0 0;
+  position: absolute; top: 96px; left: 50%; transform: translateX(-50%);
+  width: 20px; height: 10px; border-bottom: 2.5px solid #905749;
+  border-radius: 50%; z-index: 4;
 }
 
-/* Whiskers */
+/* Whiskers (6 total) */
 .octocat .whisker {
-  position: absolute; width: 35px; height: 2.5px;
-  background: rgba(0,0,0,0.15); border-radius: 2px;
+  position: absolute; width: 65px; height: 20px;
+  border-top: 2.5px solid #000; border-radius: 50%; z-index: 4;
 }
-.octocat .wl-1 { left: -8px; top: 85px; transform: rotate(-12deg); }
-.octocat .wl-2 { left: -6px; top: 100px; transform: rotate(-3deg); }
-.octocat .wr-1 { right: -8px; top: 85px; transform: rotate(12deg); }
-.octocat .wr-2 { right: -6px; top: 100px; transform: rotate(3deg); }
+.octocat .wl-1 { left: -45px; top: 78px; transform: rotate(-10deg); }
+.octocat .wl-2 { left: -48px; top: 90px; transform: rotate(-3deg); }
+.octocat .wl-3 { left: -45px; top: 102px; transform: rotate(4deg); }
+
+.octocat .wr-1 { right: -45px; top: 78px; transform: rotate(10deg); }
+.octocat .wr-2 { right: -48px; top: 90px; transform: rotate(3deg); }
+.octocat .wr-3 { right: -45px; top: 102px; transform: rotate(-4deg); }
+
+/* Water Droplets */
+.octocat .whisker-drop {
+  position: absolute; width: 6px; height: 10px; background: #92d5ff;
+  border-radius: 0 50% 50% 50%; transform: rotate(45deg); z-index: 5;
+}
+/* Left hanging drop */
+.octocat .d-left { left: 2px; top: 5px; }
+
+/* Right falling drops keyframe animation */
+.octocat .dr-1 { right: 2px; top: 5px; animation: dripFall 2s infinite linear; }
+.octocat .dr-2 { right: 2px; top: 5px; animation: dripFall 2s infinite linear 0.5s; }
+.octocat .dr-3 { right: 2px; top: 5px; animation: dripFall 2s infinite linear 1s; }
+.octocat .dr-4 { right: 2px; top: 5px; animation: dripFall 2s infinite linear 1.5s; }
+
+@keyframes dripFall {
+  0% { transform: translateY(0) rotate(45deg) scaleY(1); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(220px) rotate(45deg) scaleY(1.3); opacity: 0; }
+}
+
+/* Head highlight */
+.octocat .octo-head-highlight {
+  position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+  width: 220px; height: 15px; background: rgba(255,255,255,0.06);
+  border-radius: 50%; z-index: 12;
+}
 
 /* ==========================================================================
    7. SUPER MARIO DETAILED STYLING
