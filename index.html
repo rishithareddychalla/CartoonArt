@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Masterpieces: Famous Mascots</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation radios for pure CSS tab switching -->
+  <input type="radio" id="nav-pikachu" name="nav" checked>
+  <input type="radio" id="nav-octocat" name="nav">
+  <input type="radio" id="nav-mario" name="nav">
+  <input type="radio" id="nav-groot" name="nav">
+  <input type="radio" id="nav-toothless" name="nav">
+
+  <!-- Ambient cinematic background -->
+  <div class="scene">
+    
+    <!-- Background Starry sky (Customizable per character) -->
+    <div class="bg-stars">
+      <div class="star s1"></div>
+      <div class="star s2"></div>
+      <div class="star s3"></div>
+      <div class="star s4"></div>
+      <div class="star s5"></div>
+      <div class="star s6"></div>
+      <div class="star s7"></div>
+      <div class="star s8"></div>
+    </div>
+
+    <!-- Floating environmental particles -->
+    <div class="particles">
+      <div class="particle p1"></div>
+      <div class="particle p2"></div>
+      <div class="particle p3"></div>
+      <div class="particle p4"></div>
+      <div class="particle p5"></div>
+      <div class="particle p6"></div>
+      <div class="particle p7"></div>
+      <div class="particle p8"></div>
+      <div class="particle p9"></div>
+      <div class="particle p10"></div>
+    </div>
+
+    <!-- Dynamic environmental atmospheric glows/rays -->
+    <div class="aura-rays">
+      <div class="ray r1"></div>
+      <div class="ray r2"></div>
+      <div class="ray r3"></div>
+      <div class="moon"></div>
+      <div class="cloud c1"></div>
+      <div class="cloud c2"></div>
+    </div>
+
+    <!-- Interactive Canvas Stage -->
+    <div class="canvas-stage">
+      <div class="ground-shadow"></div>
+
+      <!-- ==========================================
+           1. PIKACHU CHARACTER
+           ========================================== -->
+      <div class="character-wrapper pikachu-wrap">
+        <div class="pikachu">
+          <div class="tail-container">
+            <div class="tail">
+              <div class="tail-segment t-sec-1"></div>
+              <div class="tail-segment t-sec-2"></div>
+              <div class="tail-segment t-sec-3"></div>
+              <div class="tail-segment t-sec-4"></div>
+              <div class="tail-segment t-sec-5">
+                <div class="tail-glow"></div>
+              </div>
+            </div>
+          </div>
+          <div class="body">
+            <div class="stripe s-top"></div>
+            <div class="stripe s-bottom"></div>
+            <div class="arm-left-container">
+              <div class="arm arm-left">
+                <div class="paw">
+                  <span class="claw c1"></span><span class="claw c2"></span><span class="claw c3"></span><span class="claw c4"></span><span class="claw c5"></span>
+                </div>
+                <div class="arm-highlight"></div>
+              </div>
+            </div>
+            <div class="arm-right-container">
+              <div class="arm arm-right">
+                <div class="paw">
+                  <span class="claw c1"></span><span class="claw c2"></span><span class="claw c3"></span><span class="claw c4"></span><span class="claw c5"></span>
+                </div>
+                <div class="arm-highlight"></div>
+              </div>
+            </div>
+            <div class="foot foot-left">
+              <span class="toe t1"></span><span class="toe t2"></span><span class="toe t3"></span>
+            </div>
+            <div class="foot foot-right">
+              <span class="toe t1"></span><span class="toe t2"></span><span class="toe t3"></span>
+            </div>
+          </div>
+          <div class="head">
+            <div class="ear-left-container">
+              <div class="ear ear-left"><div class="ear-tip"></div><div class="ear-shadow"></div></div>
+            </div>
+            <div class="ear-right-container">
+              <div class="ear ear-right"><div class="ear-tip"></div><div class="ear-shadow"></div></div>
+            </div>
+            <div class="eye eye-left">
+              <div class="eye-iris">
+                <div class="pupil-highlight main-highlight"></div><div class="pupil-highlight sub-highlight"></div>
+              </div>
+              <div class="eyelid"></div>
+            </div>
+            <div class="eye eye-right">
+              <div class="eye-iris">
+                <div class="pupil-highlight main-highlight"></div><div class="pupil-highlight sub-highlight"></div>
+              </div>
+              <div class="eyelid"></div>
+            </div>
+            <div class="nose"></div>
+            <div class="cheek cheek-left">
+              <div class="cheek-glow"></div>
+              <div class="cheek-sparks"><span class="spark s-1"></span><span class="spark s-2"></span></div>
+            </div>
+            <div class="cheek cheek-right">
+              <div class="cheek-glow"></div>
+              <div class="cheek-sparks"><span class="spark s-1"></span><span class="spark s-2"></span></div>
+            </div>
+            <div class="mouth-container">
+              <div class="mouth mouth-lip-left"></div>
+              <div class="mouth mouth-lip-right"></div>
+              <div class="mouth-open"><div class="tongue"></div></div>
+            </div>
+            <div class="head-highlight"></div>
+            <div class="head-shadow"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           2. GITHUB OCTOCAT
+           ========================================== -->
+      <div class="character-wrapper octocat-wrap">
+        <div class="octocat">
+          <!-- Tentacles (Octopus legs) -->
+          <div class="tentacles">
+            <div class="tentacle ten-1"></div>
+            <div class="tentacle ten-2"></div>
+            <div class="tentacle ten-3"></div>
+            <div class="tentacle ten-4"></div>
+            <div class="tentacle ten-5"></div>
+          </div>
+          <!-- Body / Suit -->
+          <div class="octo-body">
+            <div class="suit-collar"></div>
+            <div class="suit-button"></div>
+          </div>
+          <!-- Head / Face -->
+          <div class="octo-head">
+            <div class="octo-ear ear-l"></div>
+            <div class="octo-ear ear-r"></div>
+            <div class="octo-face-plate">
+              <!-- Bangs / Hair details -->
+              <div class="hair-bang b1"></div>
+              <div class="hair-bang b2"></div>
+              <div class="hair-bang b3"></div>
+              <!-- Eyes -->
+              <div class="octo-eye eye-l">
+                <div class="octo-iris"><div class="octo-glint"></div></div>
+                <div class="octo-eyelid"></div>
+              </div>
+              <div class="octo-eye eye-r">
+                <div class="octo-iris"><div class="octo-glint"></div></div>
+                <div class="octo-eyelid"></div>
+              </div>
+              <!-- Nose -->
+              <div class="octo-nose"></div>
+              <!-- Mouth -->
+              <div class="octo-mouth-container">
+                <div class="octo-mouth lip-l"></div>
+                <div class="octo-mouth lip-r"></div>
+                <div class="octo-mouth-open"><div class="octo-tongue"></div></div>
+              </div>
+              <!-- Whiskers -->
+              <div class="whisker wl-1"></div>
+              <div class="whisker wl-2"></div>
+              <div class="whisker wr-1"></div>
+              <div class="whisker wr-2"></div>
+            </div>
+            <div class="octo-head-highlight"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           3. MARIO CHARACTER
+           ========================================== -->
+      <div class="character-wrapper mario-wrap">
+        <div class="mario">
+          <!-- Cap -->
+          <div class="mario-cap">
+            <div class="cap-brim"></div>
+            <div class="cap-emblem">
+              <span class="mario-m">M</span>
+            </div>
+          </div>
+          <!-- Ears -->
+          <div class="mario-ear ear-l"></div>
+          <div class="mario-ear ear-r"></div>
+          <!-- Hair (Back/Sideburns) -->
+          <div class="mario-hair hair-l"></div>
+          <div class="mario-hair hair-r"></div>
+          <!-- Head / Face -->
+          <div class="mario-head">
+            <!-- Eyes -->
+            <div class="mario-eye eye-l">
+              <div class="mario-iris">
+                <div class="mario-pupil"><div class="mario-glint"></div></div>
+              </div>
+              <div class="mario-eyelid"></div>
+            </div>
+            <div class="mario-eye eye-r">
+              <div class="mario-iris">
+                <div class="mario-pupil"><div class="mario-glint"></div></div>
+              </div>
+              <div class="mario-eyelid"></div>
+            </div>
+            <!-- Nose (Large spherical) -->
+            <div class="mario-nose"></div>
+            <!-- Mustache -->
+            <div class="mario-mustache">
+              <div class="mustache-wing wl"></div>
+              <div class="mustache-wing wr"></div>
+            </div>
+            <!-- Smile / Chin -->
+            <div class="mario-chin"></div>
+          </div>
+          <!-- Body / Clothes -->
+          <div class="mario-body">
+            <!-- Red Shirt -->
+            <div class="mario-shirt">
+              <div class="sleeve sleeve-l"></div>
+              <div class="sleeve sleeve-r"></div>
+            </div>
+            <!-- Overalls -->
+            <div class="mario-overalls">
+              <div class="strap strap-l"><div class="button btn-l"></div></div>
+              <div class="strap strap-r"><div class="button btn-r"></div></div>
+              <div class="pants"></div>
+            </div>
+            <!-- Hands -->
+            <div class="mario-hand hand-l"></div>
+            <div class="mario-hand hand-r"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           4. BABY GROOT
+           ========================================== -->
+      <div class="character-wrapper groot-wrap">
+        <div class="groot">
+          <!-- Wooden Head -->
+          <div class="groot-head">
+            <div class="head-top-bark">
+              <div class="bark-sprout s1"></div>
+              <div class="bark-sprout s2"></div>
+              <div class="bark-sprout s3"></div>
+              <div class="bark-sprout s4"></div>
+            </div>
+            <!-- Eyes (Large glossy black) -->
+            <div class="groot-eye eye-l"><div class="groot-glint main"></div><div class="groot-glint sub"></div></div>
+            <div class="groot-eye eye-r"><div class="groot-glint main"></div><div class="groot-glint sub"></div></div>
+            <!-- Eyebrows / Bark lines -->
+            <div class="groot-brow brow-l"></div>
+            <div class="groot-brow brow-r"></div>
+            <!-- Mouth -->
+            <div class="groot-mouth"></div>
+            <!-- Wood textures / lines -->
+            <div class="wood-line wl-1"></div>
+            <div class="wood-line wl-2"></div>
+            <div class="wood-line wl-3"></div>
+            <!-- Sprouting leaf -->
+            <div class="head-leaf"></div>
+          </div>
+          <!-- Wooden Body -->
+          <div class="groot-body">
+            <div class="vines-wrap">
+              <div class="vine v1"></div>
+              <div class="vine v2"></div>
+            </div>
+            <div class="groot-arm arm-l"><div class="leaf l1"></div></div>
+            <div class="groot-arm arm-r"><div class="leaf l2"></div></div>
+            <div class="groot-leg leg-l"></div>
+            <div class="groot-leg leg-r"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==========================================
+           5. TOOTHLESS
+           ========================================== -->
+      <div class="character-wrapper toothless-wrap">
+        <div class="toothless">
+          <!-- Wings (Background) -->
+          <div class="dragon-wings">
+            <div class="d-wing wing-l"></div>
+            <div class="d-wing wing-r"></div>
+          </div>
+          <!-- Tail with Red Prosthetic Fin -->
+          <div class="dragon-tail">
+            <div class="tail-body"></div>
+            <div class="tail-fin-l"></div>
+            <div class="tail-fin-r prosthetic-red">
+              <div class="prosthetic-emblem"></div>
+            </div>
+          </div>
+          <!-- Head / Horns -->
+          <div class="toothless-head">
+            <!-- Ears/Horns -->
+            <div class="d-horn horn-main-l"></div>
+            <div class="d-horn horn-main-r"></div>
+            <div class="d-horn horn-sub-l1"></div>
+            <div class="d-horn horn-sub-r1"></div>
+            <div class="d-horn horn-sub-l2"></div>
+            <div class="d-horn horn-sub-r2"></div>
+            <!-- Glowing Green Eyes -->
+            <div class="toothless-eye eye-l">
+              <div class="t-iris">
+                <div class="t-pupil"></div>
+                <div class="t-glint"></div>
+              </div>
+              <div class="toothless-eyelid"></div>
+            </div>
+            <div class="toothless-eye eye-r">
+              <div class="t-iris">
+                <div class="t-pupil"></div>
+                <div class="t-glint"></div>
+              </div>
+              <div class="toothless-eyelid"></div>
+            </div>
+            <!-- Nose / Snout -->
+            <div class="toothless-snout"></div>
+            <div class="toothless-mouth"></div>
+          </div>
+          <!-- Body -->
+          <div class="toothless-body">
+            <div class="d-arm arm-l"></div>
+            <div class="d-arm arm-r"></div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- Canvas Stage End -->
+
+    <!-- Pure CSS UI Selector panel (Glassmorphic) -->
+    <div class="ui-container">
+      <div class="ui-selector">
+        <label for="nav-pikachu" class="tab-btn btn-pikachu">Pikachu</label>
+        <label for="nav-octocat" class="tab-btn btn-octocat">GitHub Octocat</label>
+        <label for="nav-mario" class="tab-btn btn-mario">Mario</label>
+        <label for="nav-groot" class="tab-btn btn-groot">Baby Groot</label>
+        <label for="nav-toothless" class="tab-btn btn-toothless">Toothless</label>
+      </div>
+
+      <div class="meta-panel">
+        <div class="meta-desc desc-pikachu">
+          <h2>Pikachu</h2>
+          <p>Electric Aura &bull; 3D Volume &bull; Twitching Ears &bull; Lightning Shock Active State</p>
+        </div>
+        <div class="meta-desc desc-octocat">
+          <h2>GitHub Octocat</h2>
+          <p>GitHub Mascot &bull; 5 Fluid Tentacles &bull; Starry Space Atmosphere &bull; Shy Eyes</p>
+        </div>
+        <div class="meta-desc desc-mario">
+          <h2>Super Mario</h2>
+          <p>Nintendo Hero &bull; Large Nose & Mustache &bull; Pixel Sky & Floating Retro Clouds</p>
+        </div>
+        <div class="meta-desc desc-groot">
+          <h2>Baby Groot</h2>
+          <p>Guardians of the Galaxy &bull; Wood Bark Gradients &bull; Sprouting Leaves & Vine Body</p>
+        </div>
+        <div class="meta-desc desc-toothless">
+          <h2>Toothless (Night Fury)</h2>
+          <p>How to Train Your Dragon &bull; Glowing Green Eyes &bull; Prosthetic Tail Fin &bull; Full Moon</p>
+        </div>
+        <div class="instructions">Hover to animate &bull; Click/Hold stage to trigger special interaction</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
