@@ -862,15 +862,14 @@ input[name="nav"] {
   width: 205px; height: 215px;
   background: 
     repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 5px, rgba(45, 32, 25, 0.08) 5px, rgba(45, 32, 25, 0.08) 7px),
-    radial-gradient(circle at 45% 35%, var(--g-real-brown-light) 0%, var(--g-real-brown) 50%, var(--g-real-brown-dark) 100%);
-  border-radius: 95px 95px 80px 80px / 110px 110px 90px 90px;
+    linear-gradient(to bottom, #7bad49 0%, #4a752c 10%, #765643 14%, var(--g-real-brown) 40%, var(--g-real-brown-dark) 100%);
+  clip-path: polygon(0% 35%, 4% 23%, 8% 13%, 16% 22%, 22% 10%, 35% 26%, 48% 4%, 56% 20%, 70% 6%, 82% 22%, 92% 12%, 100% 35%, 96% 70%, 82% 90%, 50% 98%, 18% 90%, 4% 70%);
   z-index: 10; 
   box-shadow: 
     inset 10px 10px 20px rgba(255, 255, 255, 0.08), 
     inset -10px -10px 25px rgba(0, 0, 0, 0.65), 
     0 15px 35px rgba(0, 0, 0, 0.45);
   animation: headNod 8s infinite ease-in-out;
-  overflow: hidden;
 }
 
 /* Wood textures/grain lines on face */
@@ -917,30 +916,32 @@ input[name="nav"] {
   filter: blur(5px); z-index: 1; pointer-events: none;
 }
 
-/* Mossy wood top sprouts */
+/* Mossy wood top sprouts (Rear Layer of the Crown) */
 .groot .head-top-bark {
-  position: absolute; top: -25px; width: 100%; height: 45px; z-index: 2;
+  position: absolute; top: 0; width: 100%; height: 60px; z-index: -1;
 }
 .groot .bark-sprout {
-  position: absolute; bottom: 0; width: 42px; height: 55px;
-  background: linear-gradient(to bottom, #7bad49 0%, #4a752c 25%, var(--g-real-brown) 60%, var(--g-real-brown-dark) 100%);
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.15);
+  position: absolute; bottom: 0; width: 42px; height: 65px;
+  background: #362218;
+  border-radius: 10px;
+  opacity: 0.8;
+  box-shadow: inset -2px -2px 5px rgba(0,0,0,0.5);
 }
-.groot .s1 { left: 4px; transform: rotate(-28deg); height: 50px; clip-path: polygon(0% 100%, 25% 10%, 65% 0%, 100% 15%, 85% 100%); }
-.groot .s2 { left: 42px; transform: rotate(-12deg); height: 60px; clip-path: polygon(0% 100%, 30% 0%, 75% 10%, 100% 20%, 90% 100%); }
-.groot .s3 { left: 82px; transform: rotate(0deg); height: 62px; clip-path: polygon(0% 100%, 10% 15%, 50% 0%, 90% 10%, 100% 100%); }
-.groot .s4 { right: 42px; transform: rotate(12deg); height: 60px; clip-path: polygon(10% 100%, 0% 20%, 25% 10%, 70% 0%, 100% 100%); }
-.groot .s5 { right: 4px; transform: rotate(28deg); height: 52px; clip-path: polygon(15% 100%, 0% 15%, 35% 0%, 75% 10%, 100% 100%); }
+.groot .s1 { left: -10px; transform: rotate(-25deg); height: 50px; }
+.groot .s2 { left: 30px; transform: rotate(-10deg); height: 60px; }
+.groot .s3 { left: 70px; transform: rotate(5deg); height: 62px; }
+.groot .s4 { right: 30px; transform: rotate(15deg); height: 60px; }
+.groot .s5 { right: -10px; transform: rotate(25deg); height: 52px; }
 
-/* Sprouting Leaves on Head */
+/* Sprouting Leaves on Head (Viewer's Left side cluster) */
 .groot .head-leaf {
   position: absolute; width: 13px; height: 24px;
   background: radial-gradient(circle, #7bad49 0%, #4a752c 100%);
-  border-radius: 100% 0 100% 0; box-shadow: 0 3px 6px rgba(0,0,0,0.2); z-index: 3;
+  border-radius: 100% 0 100% 0; box-shadow: 0 3px 6px rgba(0,0,0,0.2); z-index: 15;
 }
-.groot .hl-1 { top: -20px; left: 32px; transform: rotate(-35deg); }
-.groot .hl-2 { top: -22px; right: 52px; transform: rotate(45deg); width: 10px; height: 20px; }
-.groot .hl-3 { top: -10px; right: 20px; transform: rotate(75deg); width: 9px; height: 18px; }
+.groot .hl-1 { top: -8px; left: 22px; transform: rotate(-55deg); }
+.groot .hl-2 { top: 0px; left: 6px; transform: rotate(-75deg); width: 11px; height: 20px; }
+.groot .hl-3 { top: 16px; left: -10px; transform: rotate(-100deg); width: 10px; height: 18px; }
 
 /* Glassy Eyes with Warm Amber Iris Refractions */
 .groot .groot-eye {
