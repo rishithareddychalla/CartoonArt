@@ -1098,101 +1098,108 @@ input[name="nav"] {
   cursor: pointer;
 }
 
-/* Head */
+/* Head - Rounded Baby Dragon Shape */
 .toothless .toothless-head {
-  position: absolute; top: 65px; left: 50%; transform: translateX(-50%);
-  width: 235px; height: 165px;
+  position: absolute; top: 40px; left: 50%; transform: translateX(-50%);
+  width: 205px; height: 150px;
   background: 
+    radial-gradient(circle at 35% 82%, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 3px, transparent 4px),
+    radial-gradient(circle at 65% 82%, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 3px, transparent 4px),
     repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.015) 0px, rgba(255, 255, 255, 0.015) 1px, transparent 1px, transparent 4px),
     repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.015) 0px, rgba(255, 255, 255, 0.015) 1px, transparent 1px, transparent 4px),
     radial-gradient(circle at 50% 35%, var(--t-black-light) 0%, var(--t-black) 60%, var(--t-black-dark) 100%);
-  border-radius: 115px 115px 95px 95px / 90px 90px 75px 75px;
+  border-radius: 105px 105px 85px 85px / 85px 85px 70px 70px;
   z-index: 10; 
   box-shadow: 
-    inset 10px 10px 18px rgba(255, 255, 255, 0.07), 
-    inset -10px -10px 20px rgba(0, 0, 0, 0.8),
-    0 12px 30px rgba(0, 0, 0, 0.5);
+    inset 8px 8px 15px rgba(255, 255, 255, 0.06), 
+    inset -8px -8px 18px rgba(0, 0, 0, 0.85),
+    0 12px 25px rgba(0, 0, 0, 0.4);
   animation: headNod 8s infinite ease-in-out;
 }
 
-/* Forehead Scales & Snout Details */
+/* Crown Ridges (between the ears) */
 .toothless .scales-group {
-  position: absolute; top: 18px; left: 50%; transform: translateX(-50%);
-  width: 80px; height: 35px; display: flex; justify-content: center; gap: 4px; z-index: 11;
+  position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
+  width: 70px; height: 20px; display: flex; justify-content: center; gap: 3px; z-index: -1;
 }
 .toothless .t-scale {
-  width: 8px; height: 8px; background: rgba(255, 255, 255, 0.04);
-  border-radius: 50%; transform: rotate(45deg);
-  box-shadow: inset -1px -1px 2px rgba(0,0,0,0.5), 1px 1px 1px rgba(255,255,255,0.05);
+  width: 10px; height: 16px; background: var(--t-black);
+  border-radius: 50% 50% 0 0; transform: none;
+  box-shadow: inset 1px 1px 2px rgba(255,255,255,0.06), 0 2px 3px rgba(0,0,0,0.5);
   transition: all 0.5s ease;
 }
-.toothless .ts-head-1 { transform: translateY(4px) scale(0.8); }
-.toothless .ts-head-2 { transform: translateY(0px) scale(1.1); }
-.toothless .ts-head-3 { transform: translateY(-2px) scale(1.2); }
-.toothless .ts-head-4 { transform: translateY(0px) scale(1.1); }
-.toothless .ts-head-5 { transform: translateY(4px) scale(0.8); }
+.toothless .ts-head-1 { transform: translateY(4px) scale(0.85); }
+.toothless .ts-head-2 { transform: translateY(1px) scale(1); }
+.toothless .ts-head-3 { transform: translateY(0px) scale(1.1); }
+.toothless .ts-head-4 { transform: translateY(1px) scale(1); }
+.toothless .ts-head-5 { transform: translateY(4px) scale(0.85); }
 
 /* Bioluminescent charging state triggers */
 .toothless:hover .t-scale,
 .toothless:active .t-scale {
   background: #34e7e4;
-  box-shadow: 0 0 12px #34e7e4, 0 0 24px #34e7e4;
+  box-shadow: 0 0 10px #34e7e4, 0 0 20px #34e7e4;
   filter: drop-shadow(0 0 4px #34e7e4);
 }
 
-/* Horns & Appendages */
+/* Ears & Cheek Horns */
 .toothless .d-horn {
   position: absolute;
   background: 
     repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 4px),
     radial-gradient(ellipse at center, var(--t-black) 0%, var(--t-black-dark) 100%);
-  z-index: -1;
+  z-index: -2;
   box-shadow: inset -4px -4px 8px rgba(0,0,0,0.7);
 }
 .toothless .horn-main-l {
-  left: 22px; top: -52px; width: 44px; height: 110px;
-  border-radius: 80% 20% 0 0 / 80% 40% 0 0; transform: rotate(-38deg);
+  left: 10px; top: -55px; width: 42px; height: 95px;
+  border-radius: 50% 50% 10% 10% / 80% 80% 20% 20%; transform: rotate(-8deg);
 }
 .toothless .horn-main-r {
-  right: 22px; top: -52px; width: 44px; height: 110px;
-  border-radius: 20% 80% 0 0 / 40% 80% 0 0; transform: rotate(38deg);
+  right: 10px; top: -55px; width: 42px; height: 95px;
+  border-radius: 50% 50% 10% 10% / 80% 80% 20% 20%; transform: rotate(8deg);
 }
-.toothless .horn-sub-l1 { left: -14px; top: 32px; width: 38px; height: 42px; border-radius: 70% 30% 0 0; transform: rotate(-78deg); }
-.toothless .horn-sub-r1 { right: -14px; top: 32px; width: 38px; height: 42px; border-radius: 30% 70% 0 0; transform: rotate(78deg); }
-.toothless .horn-sub-l2 { left: 52px; top: -24px; width: 22px; height: 38px; border-radius: 50% 50% 0 0; transform: rotate(-18deg); }
-.toothless .horn-sub-r2 { right: 52px; top: -24px; width: 22px; height: 38px; border-radius: 50% 50% 0 0; transform: rotate(18deg); }
+/* Cheek Horns/Nubs (2 on each side of the head) */
+.toothless .horn-sub-l1 { left: -12px; top: 75px; width: 22px; height: 28px; border-radius: 70% 30% 0 0; transform: rotate(-75deg); }
+.toothless .horn-sub-r1 { right: -12px; top: 75px; width: 22px; height: 28px; border-radius: 30% 70% 0 0; transform: rotate(75deg); }
+.toothless .horn-sub-l2 { left: -18px; top: 45px; width: 26px; height: 32px; border-radius: 70% 30% 0 0; transform: rotate(-60deg); }
+.toothless .horn-sub-r2 { right: -18px; top: 45px; width: 26px; height: 32px; border-radius: 30% 70% 0 0; transform: rotate(60deg); }
 
-/* Glowing Green Cat Eyes */
+/* Bright Lime-Green Cat Eyes */
 .toothless .toothless-eye {
-  position: absolute; top: 58px; width: 62px; height: 48px;
-  background: radial-gradient(circle at 35% 35%, #e6ff6c 0%, var(--t-eye-green) 50%, #157936 80%, #033c13 100%);
-  border-radius: 50% 50% 38% 38% / 60% 60% 40% 40%;
+  position: absolute; top: 44px; width: 62px; height: 62px;
+  background: radial-gradient(circle at 35% 35%, #e2fd2a 0%, #2ecc71 50%, #0d6c34 85%, #023814 100%);
+  border-radius: 50% 50% 42% 42% / 60% 60% 40% 40%;
   overflow: hidden; z-index: 12;
   box-shadow: 
-    0 0 15px rgba(123, 237, 159, 0.4), 
-    inset -3px -3px 8px rgba(0,0,0,0.45),
-    inset 3px 3px 6px rgba(255,255,255,0.15);
+    0 0 12px rgba(123, 237, 159, 0.35), 
+    inset -3px -3px 8px rgba(0,0,0,0.5),
+    inset 3px 3px 6px rgba(255,255,255,0.18);
   transition: box-shadow 0.4s ease;
 }
-.toothless .eye-l { left: 32px; transform: rotate(11deg); }
-.toothless .eye-r { right: 32px; transform: rotate(-11deg); }
+.toothless .eye-l { left: 24px; transform: rotate(8deg); }
+.toothless .eye-r { right: 24px; transform: rotate(-8deg); }
 
 .toothless:hover .toothless-eye {
   box-shadow: 
-    0 0 25px rgba(46, 204, 113, 0.95), 
+    0 0 22px rgba(46, 204, 113, 0.9), 
     inset -3px -3px 8px rgba(0,0,0,0.3);
 }
 
 .toothless .t-iris { position: relative; width: 100%; height: 100%; }
 .toothless .t-pupil {
-  position: absolute; top: 10%; left: 50%; transform: translateX(-50%);
-  width: 14px; height: 80%; background: var(--t-eye-pupil);
-  border-radius: 50% / 100%; 
-  box-shadow: 0 0 5px rgba(0,0,0,0.85);
+  position: absolute; top: 12%; left: 50%; transform: translateX(-50%);
+  width: 20px; height: 75%; background: var(--t-eye-pupil);
+  border-radius: 50%; 
+  box-shadow: 0 0 4px rgba(0,0,0,0.9);
   animation: toothlessPupilNarrow 6s infinite ease-in-out;
 }
+.toothless .t-pupil::after {
+  content: ''; position: absolute; bottom: 8px; right: 2px;
+  width: 6px; height: 6px; background: #fff; border-radius: 50%; opacity: 0.6;
+}
 .toothless .t-glint {
-  position: absolute; top: 6px; left: 18px; width: 12px; height: 12px;
+  position: absolute; top: 10px; left: 16px; width: 14px; height: 14px;
   background: #fff; border-radius: 50%; opacity: 0.85;
 }
 .toothless .toothless-eyelid {
@@ -1201,31 +1208,31 @@ input[name="nav"] {
   animation: blinkEye 4.5s infinite linear;
 }
 
-/* Snout with detailed nostrils */
+/* Snout Details */
 .toothless .toothless-snout {
-  position: absolute; top: 96px; left: 50%; transform: translateX(-50%);
-  width: 36px; height: 14px; 
+  position: absolute; top: 92px; left: 50%; transform: translateX(-50%);
+  width: 32px; height: 12px; 
   border-top: 2px solid rgba(255, 255, 255, 0.08);
   border-radius: 50%;
 }
 .toothless .toothless-snout::before,
 .toothless .toothless-snout::after {
-  content: ''; position: absolute; top: 4px;
-  width: 5px; height: 3px; background: rgba(0,0,0,0.8);
+  content: ''; position: absolute; top: 3px;
+  width: 4px; height: 3px; background: rgba(0,0,0,0.85);
   border-radius: 50%;
 }
-.toothless .toothless-snout::before { left: 10px; transform: rotate(-15deg); }
-.toothless .toothless-snout::after { right: 10px; transform: rotate(15deg); }
+.toothless .toothless-snout::before { left: 9px; transform: rotate(-15deg); }
+.toothless .toothless-snout::after { right: 9px; transform: rotate(15deg); }
 
-/* Mouth */
+/* Cute Wide Smile Mouth */
 .toothless .toothless-mouth {
-  position: absolute; top: 112px; left: 50%; transform: translateX(-50%);
-  width: 76px; height: 8px; border-bottom: 3.5px solid var(--t-black-dark);
+  position: absolute; top: 110px; left: 50%; transform: translateX(-50%);
+  width: 130px; height: 12px; border-bottom: 3.5px solid var(--t-black-dark);
   border-radius: 50%; overflow: hidden;
 }
 .toothless .mouth-plasma-glow {
   position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%);
-  width: 35px; height: 16px; background: radial-gradient(circle, #34e7e4 0%, transparent 70%);
+  width: 50px; height: 16px; background: radial-gradient(circle, #34e7e4 0%, transparent 70%);
   opacity: 0; filter: blur(2px); transition: opacity 0.4s ease;
 }
 .toothless:hover .mouth-plasma-glow,
@@ -1233,15 +1240,18 @@ input[name="nav"] {
   opacity: 1;
 }
 
-/* Body with Scale Texture (visible overflow to show arms/legs) */
+/* Body with Watercolor Speckled Scales */
 .toothless .toothless-body {
-  position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%);
-  width: 160px; height: 170px;
+  position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%);
+  width: 140px; height: 180px;
   background: 
+    radial-gradient(circle at 30% 40%, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 4px, transparent 5px),
+    radial-gradient(circle at 75% 55%, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 3px, transparent 4px),
+    radial-gradient(circle at 45% 75%, rgba(255,255,255,0.07) 0px, rgba(255,255,255,0.07) 5px, transparent 6px),
     repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 4px),
     repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.012) 0px, rgba(255, 255, 255, 0.012) 1px, transparent 1px, transparent 4px),
     radial-gradient(circle at 50% 30%, var(--t-black-light) 0%, var(--t-black) 60%, var(--t-black-dark) 100%);
-  border-radius: 80px 80px 60px 60px / 100px 100px 70px 70px;
+  border-radius: 80px 80px 60px 60px / 95px 95px 85px 85px;
   z-index: 7; 
   box-shadow: 
     inset 8px 8px 15px rgba(255, 255, 255, 0.06), 
@@ -1250,8 +1260,8 @@ input[name="nav"] {
   overflow: visible;
 }
 .toothless .body-glow-veins {
-  position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
-  width: 40px; height: 75px;
+  position: absolute; top: 30px; left: 50%; transform: translateX(-50%);
+  width: 50px; height: 80px;
   background: radial-gradient(ellipse, rgba(52, 231, 228, 0.45) 0%, transparent 70%);
   mix-blend-mode: screen; opacity: 0; filter: blur(3px);
   transition: opacity 0.5s ease;
@@ -1263,103 +1273,110 @@ input[name="nav"] {
   opacity: 1;
 }
 
-/* Arms, Legs, and Claws styling */
-.toothless .d-arm,
-.toothless .d-leg {
-  position: absolute;
+/* Front Legs (Vertical Pillars Resting Firmly on the Ground) */
+.toothless .d-arm {
+  position: absolute; width: 44px; height: 135px; z-index: 8;
   background: 
+    radial-gradient(circle at 35% 20%, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 3px, transparent 4px),
+    radial-gradient(circle at 65% 50%, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 3px, transparent 4px),
+    radial-gradient(circle at 30% 80%, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 4px, transparent 5px),
     repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 1px, transparent 1px, transparent 4px),
     radial-gradient(ellipse at center, var(--t-black) 0%, var(--t-black-dark) 100%);
-  box-shadow: inset -2px -2px 6px rgba(0,0,0,0.6), 0 4px 8px rgba(0,0,0,0.3);
+  border-radius: 22px 22px 14px 14px;
+  box-shadow: inset -2px -2px 6px rgba(0,0,0,0.6), 0 4px 6px rgba(0,0,0,0.3);
 }
+.toothless .arm-l { left: 15px; bottom: -50px; }
+.toothless .arm-r { left: 75px; bottom: -52px; }
 
-.toothless .d-arm {
-  width: 34px; height: 95px; border-radius: 17px; z-index: 8;
-}
-.toothless .arm-l { left: -12px; top: 30px; transform: rotate(18deg); transform-origin: top center; animation: armSwayLeft 5s infinite ease-in-out; }
-.toothless .arm-r { right: -12px; top: 30px; transform: rotate(-18deg); transform-origin: top center; animation: armSwayRight 5s infinite ease-in-out; }
-
+/* Rear Legs (Crouched Behind the Front Pillars) */
 .toothless .d-leg {
-  width: 40px; height: 80px; border-radius: 20px; z-index: 6;
+  position: absolute; width: 48px; height: 105px; z-index: 5;
+  background: 
+    radial-gradient(circle at 30% 45%, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 3px, transparent 4px),
+    radial-gradient(circle at 70% 75%, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 4px, transparent 5px),
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 1px, transparent 1px, transparent 4px),
+    radial-gradient(ellipse at center, var(--t-black) 0%, var(--t-black-dark) 100%);
+  box-shadow: inset -2px -2px 6px rgba(0,0,0,0.6), 0 4px 8px rgba(0,0,0,0.35);
 }
-.toothless .leg-l { left: 16px; bottom: -30px; transform: rotate(15deg); }
-.toothless .leg-r { right: 16px; bottom: -30px; transform: rotate(-15deg); }
+.toothless .leg-l { left: -10px; bottom: -45px; border-radius: 30px 15px 20px 20px / 50px 30px 20px 20px; }
+.toothless .leg-r { right: -15px; bottom: -45px; border-radius: 15px 30px 20px 20px / 30px 50px 20px 20px; }
 
-/* Claws (renders 3 white claws using shadows) */
+/* Claws (rounded, thick claws on the ground) */
 .toothless .claws {
-  position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%);
-  width: 24px; height: 8px; z-index: 9;
+  position: absolute; bottom: -3px; left: 50%; transform: translateX(-50%);
+  width: 32px; height: 10px; z-index: 9;
 }
 .toothless .claws::before {
   content: ''; position: absolute; left: 50%; transform: translateX(-50%);
-  width: 4px; height: 7px; background: #fff; border-radius: 50% 50% 0 0;
-  box-shadow: -6px 1px 0 #fff, 6px 1px 0 #fff, 0 1px 2px rgba(0,0,0,0.4);
+  width: 7px; height: 8px; background: #e0d0c0; border-radius: 50% 50% 0 0;
+  box-shadow: -13px 1px 0 #e0d0c0, -6px 0 0 #e0d0c0, 6px 0 0 #e0d0c0, 13px 1px 0 #e0d0c0;
 }
 
-/* Wings (Behind) aligned side-by-side */
+/* Majestic Wings (Held out, using custom bat-wing clip-path polygons) */
 .toothless .dragon-wings {
-  position: absolute; top: 85px; left: 50%; transform: translateX(-50%);
-  width: 380px; height: 160px; z-index: -2;
+  position: absolute; top: 110px; left: 50%; transform: translateX(-50%);
+  width: 360px; height: 210px; z-index: -2;
   display: flex; justify-content: space-between;
 }
 .toothless .d-wing {
-  position: relative; width: 180px; height: 120px;
+  position: relative; width: 175px; height: 200px;
   background: 
     repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.008) 0px, rgba(255, 255, 255, 0.008) 1px, transparent 1px, transparent 4px),
     radial-gradient(ellipse at center, var(--t-black-light) 0%, var(--t-black-dark) 100%);
   box-shadow: inset -4px -4px 8px rgba(0,0,0,0.6);
-  overflow: hidden;
 }
 .toothless .wing-l {
-  border-radius: 150px 20px 80px 20px;
-  transform: rotate(-12deg); transform-origin: bottom right;
-  animation: wingFlapL 6s infinite ease-in-out;
+  clip-path: polygon(100% 10%, 80% 0%, 10% 20%, 0% 60%, 15% 90%, 32% 78%, 45% 92%, 62% 76%, 76% 88%, 88% 70%, 100% 65%);
+  transform-origin: bottom right; animation: wingFlapL 6s infinite ease-in-out;
 }
 .toothless .wing-r {
-  border-radius: 20px 150px 20px 80px;
-  transform: rotate(12deg); transform-origin: bottom left;
-  animation: wingFlapR 6s infinite ease-in-out;
+  clip-path: polygon(0% 10%, 20% 0%, 90% 20%, 100% 60%, 85% 90%, 68% 78%, 55% 92%, 38% 76%, 24% 88%, 12% 70%, 0% 65%);
+  transform-origin: bottom left; animation: wingFlapR 6s infinite ease-in-out;
 }
 
-/* Wing bones styling */
+/* Wing bones styling to map to scalloped tips */
 .toothless .wing-bone {
   position: absolute; background: rgba(255,255,255,0.06); border-radius: 50%;
 }
-.toothless .wing-l .wb-1 { top: 10px; right: 20px; width: 100px; height: 4px; transform: rotate(-25deg); }
-.toothless .wing-l .wb-2 { top: 35px; right: 30px; width: 120px; height: 3px; transform: rotate(-10deg); }
-.toothless .wing-l .wb-3 { top: 60px; right: 40px; width: 110px; height: 3px; transform: rotate(10deg); }
+.toothless .wing-l .wb-1 { top: 15px; right: 10px; width: 140px; height: 4px; transform: rotate(-35deg); }
+.toothless .wing-l .wb-2 { top: 40px; right: 20px; width: 130px; height: 3px; transform: rotate(-15deg); }
+.toothless .wing-l .wb-3 { top: 70px; right: 30px; width: 120px; height: 3px; transform: rotate(10deg); }
 
-.toothless .wing-r .wb-1 { top: 10px; left: 20px; width: 100px; height: 4px; transform: rotate(25deg); }
-.toothless .wing-r .wb-2 { top: 35px; left: 30px; width: 120px; height: 3px; transform: rotate(10deg); }
-.toothless .wing-r .wb-3 { top: 60px; left: 40px; width: 110px; height: 3px; transform: rotate(-10deg); }
+.toothless .wing-r .wb-1 { top: 15px; left: 10px; width: 140px; height: 4px; transform: rotate(35deg); }
+.toothless .wing-r .wb-2 { top: 40px; left: 20px; width: 130px; height: 3px; transform: rotate(15deg); }
+.toothless .wing-r .wb-3 { top: 70px; left: 30px; width: 120px; height: 3px; transform: rotate(-10deg); }
 
-/* Tail & Spikes & Prosthetic Fin */
+/* Tail (Curving Down and out to the Right) */
 .toothless .dragon-tail {
-  position: absolute; bottom: 55px; left: 50%; transform: translateX(-70%);
-  width: 180px; height: 120px; z-index: -3;
-  transform-origin: right center; animation: tailWag 6s infinite ease-in-out;
+  position: absolute; bottom: -30px; right: -130px;
+  width: 200px; height: 80px; z-index: 4;
+  transform-origin: left center; animation: tailWag 6s infinite ease-in-out;
 }
 .toothless .tail-body {
-  position: absolute; bottom: 10px; left: 15px; width: 140px; height: 35px;
-  background: radial-gradient(ellipse at center, var(--t-black) 0%, var(--t-black-dark) 100%);
-  border-radius: 50% 20% 20% 50% / 50% 50% 50% 50%;
-  transform: rotate(-12deg);
-  display: flex; gap: 15px; padding-left: 20px; align-items: center;
+  position: absolute; bottom: 0; left: 0; width: 170px; height: 40px;
+  background: none;
+  border-bottom: 24px solid var(--t-black-dark);
+  border-radius: 0 0 160px 40px / 0 0 80px 20px;
+  transform: rotate(5deg);
 }
 .toothless .tail-spike {
-  width: 6px; height: 12px; background: var(--t-black-dark);
-  border-radius: 50% 50% 0 0; transform: rotate(-45deg);
-  box-shadow: 1px -1px 2px rgba(255,255,255,0.05);
+  position: absolute; width: 5px; height: 10px; background: var(--t-black-dark);
+  border-radius: 50% 50% 0 0;
 }
+.toothless .ts-1 { right: 40px; bottom: 8px; transform: rotate(45deg); }
+.toothless .ts-2 { right: 70px; bottom: 0px; transform: rotate(30deg); }
+.toothless .ts-3 { right: 100px; bottom: -4px; transform: rotate(15deg); }
+.toothless .ts-4 { right: 130px; bottom: -6px; transform: rotate(5deg); }
 
+/* Tail stabilizers (Left: Black, Right: Red Viking prosthetic) */
 .toothless .tail-fin-l {
-  position: absolute; left: -15px; bottom: 15px; width: 50px; height: 35px;
+  position: absolute; right: 0; top: 10px; width: 45px; height: 35px;
   background: var(--t-black-dark); border-radius: 80% 0 50% 50%;
-  transform: rotate(-25deg);
+  transform: rotate(-15deg);
 }
 .toothless .tail-fin-r {
-  position: absolute; left: -15px; bottom: -5px; width: 50px; height: 35px;
-  border-radius: 0 80% 50% 50%; transform: rotate(25deg);
+  position: absolute; right: 15px; top: 35px; width: 45px; height: 35px;
+  border-radius: 0 80% 50% 50%; transform: rotate(15deg);
 }
 .toothless .prosthetic-red {
   background: radial-gradient(circle at center, #ff7675 0%, var(--t-prosthetic) 75%, #c0392b 100%);
@@ -1560,11 +1577,11 @@ input[name="nav"] {
 @keyframes tentacleMove5 { 0%, 100% { transform: rotate(-45deg); } 50% { transform: rotate(-52deg); } }
 
 /* Toothless specific animations */
-@keyframes wingFlapL { 0%, 100% { transform: rotate(-15deg); } 50% { transform: rotate(-5deg); } }
-@keyframes wingFlapR { 0%, 100% { transform: rotate(15deg); } 50% { transform: rotate(5deg); } }
+@keyframes wingFlapL { 0%, 100% { transform: rotate(-12deg) scaleY(1); } 50% { transform: rotate(-4deg) scaleY(0.95); } }
+@keyframes wingFlapR { 0%, 100% { transform: rotate(12deg) scaleY(1); } 50% { transform: rotate(4deg) scaleY(0.95); } }
 @keyframes toothlessPupilNarrow {
-  0%, 100%, 70% { width: 14px; }
-  75%, 90% { width: 3px; }
+  0%, 100%, 70% { width: 20px; }
+  75%, 90% { width: 5px; }
 }
 
 /* ==========================================================================
