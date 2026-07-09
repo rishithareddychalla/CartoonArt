@@ -966,9 +966,9 @@ input[name="nav"] {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent);
 }
 .groot .groot-glint { position: absolute; background: #fff; border-radius: 50%; }
-.groot .main { top: 7px; left: 8px; width: 14px; height: 14px; }
-.groot .sub-1 { top: 15px; left: 24px; width: 5px; height: 5px; opacity: 0.8; }
-.groot .sub-2 { bottom: 12px; right: 12px; width: 3.5px; height: 3.5px; opacity: 0.6; }
+.groot .main { top: 7px; left: 8px; width: 15px; height: 15px; }
+.groot .sub-1 { bottom: 8px; right: 8px; width: 6px; height: 6px; opacity: 0.95; }
+.groot .sub-2 { top: 16px; left: 25px; width: 4px; height: 4px; opacity: 0.75; }
 
 .groot .eyelid {
   position: absolute; top: -100%; left: 0; width: 100%; height: 100%;
@@ -985,16 +985,24 @@ input[name="nav"] {
 .groot .brow-l { left: 28px; transform: rotate(8deg); }
 .groot .brow-r { right: 28px; transform: rotate(-8deg); }
 
-/* Mouth - Subtle Curved Closed Smile */
+/* Mouth - Open Smile showing Tongue */
 .groot .groot-mouth {
-  position: absolute; top: 154px; left: 50%; transform: translateX(-50%);
-  width: 70px; height: 20px; overflow: visible;
+  position: absolute; top: 152px; left: 50%; transform: translateX(-50%);
+  width: 44px; height: 22px;
+  background: #150a08;
+  border-radius: 0 0 22px 22px;
+  border: 3.5px solid #281812;
+  border-top: transparent;
+  overflow: hidden;
+  box-shadow: inset 0 4px 6px rgba(0,0,0,0.85);
+  z-index: 11;
 }
 .groot .groot-mouth-line {
-  width: 100%; height: 100%;
-  border-bottom: 3.5px solid #281812;
-  border-radius: 50%;
-  box-shadow: 0 2px 0 rgba(255, 255, 255, 0.06);
+  position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%);
+  width: 26px; height: 11px;
+  background: #ff5e57;
+  border-radius: 13px 13px 0 0;
+  box-shadow: inset 0 2px 2px rgba(255,255,255,0.2);
 }
 
 /* Body & Vines */
@@ -1033,8 +1041,19 @@ input[name="nav"] {
   border-radius: 13px; z-index: 5;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3), inset -2px -2px 6px rgba(0,0,0,0.3);
 }
+.groot .groot-arm::after {
+  content: ''; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%);
+  width: 24px; height: 12px;
+  background: #5e3f2e;
+  clip-path: polygon(0% 100%, 20% 20%, 40% 100%, 50% 10%, 65% 100%, 80% 25%, 100% 100%);
+}
 .groot .arm-l { left: -10px; top: 15px; transform: rotate(24deg); transform-origin: top center; animation: armSwayLeft 5s infinite ease-in-out; }
-.groot .arm-r { right: -10px; top: 15px; transform: rotate(-20deg); transform-origin: top center; animation: armSwayRight 5s infinite ease-in-out; }
+.groot .arm-r { right: -25px; top: 15px; transform: rotate(-130deg); transform-origin: top center; animation: grootWave 2.5s infinite ease-in-out; }
+
+@keyframes grootWave {
+  0%, 100% { transform: rotate(-125deg); }
+  50% { transform: rotate(-140deg); }
+}
 
 /* Leaves */
 .groot .leaf {
