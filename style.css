@@ -1095,13 +1095,20 @@ input[name="nav"] {
   cursor: pointer;
 }
 
-/* Head */
+/* Head with detailed scale texture overlays */
 .toothless .toothless-head {
   position: absolute; top: 65px; left: 50%; transform: translateX(-50%);
   width: 230px; height: 170px;
-  background: radial-gradient(circle at 45% 30%, var(--t-black-light) 0%, var(--t-black) 55%, var(--t-black-dark) 100%);
+  background: 
+    repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(255, 255, 255, 0.01) 5px, rgba(255, 255, 255, 0.01) 7px),
+    repeating-linear-gradient(-45deg, transparent, transparent 5px, rgba(255, 255, 255, 0.01) 5px, rgba(255, 255, 255, 0.01) 7px),
+    radial-gradient(circle at 45% 30%, var(--t-black-light) 0%, var(--t-black) 55%, var(--t-black-dark) 100%);
   border-radius: 115px 115px 95px 95px / 95px 95px 80px 80px;
-  z-index: 10; box-shadow: inset 8px 8px 12px rgba(255,255,255,0.08), 0 12px 25px rgba(0,0,0,0.4);
+  z-index: 10; 
+  box-shadow: 
+    inset 8px 8px 15px rgba(255,255,255,0.06), 
+    inset -8px -8px 15px rgba(0,0,0,0.7), 
+    0 12px 28px rgba(0,0,0,0.45);
   animation: headNod 8s infinite ease-in-out;
 }
 
@@ -1113,7 +1120,7 @@ input[name="nav"] {
 .toothless .t-scale {
   width: 8px; height: 8px; background: rgba(255,255,255,0.04);
   border-radius: 50%; transform: rotate(45deg);
-  box-shadow: inset -1px -1px 2px rgba(0,0,0,0.5), 1px 1px 1px rgba(255,255,255,0.05);
+  box-shadow: inset -1px -1px 2px rgba(0,0,0,0.6), 1px 1px 1px rgba(255,255,255,0.06);
   transition: all 0.5s ease;
 }
 .toothless .ts-head-1 { transform: translateY(4px) scale(0.8); }
@@ -1126,37 +1133,40 @@ input[name="nav"] {
 .toothless:hover .t-scale,
 .toothless:active .t-scale {
   background: #34e7e4;
-  box-shadow: 0 0 10px #34e7e4, 0 0 20px #34e7e4;
-  filter: drop-shadow(0 0 4px #34e7e4);
+  box-shadow: 0 0 8px #34e7e4, 0 0 15px #34e7e4;
+  filter: drop-shadow(0 0 3px #34e7e4);
 }
 
-/* Horns & Appendages */
+/* Horns & Appendages with organic curvature and light edges */
 .toothless .d-horn {
   position: absolute;
   background: radial-gradient(ellipse at center, var(--t-black) 0%, var(--t-black-dark) 100%);
   z-index: -1;
-  box-shadow: inset -3px -3px 5px rgba(0,0,0,0.5);
+  box-shadow: inset 4px 4px 6px rgba(255,255,255,0.05), inset -4px -4px 8px rgba(0,0,0,0.7);
 }
 .toothless .horn-main-l {
   left: 20px; top: -45px; width: 45px; height: 100px;
-  border-radius: 80% 20% 0 0 / 80% 40% 0 0; transform: rotate(-35deg);
+  border-radius: 85% 15% 0 0 / 80% 30% 0 0; transform: rotate(-32deg);
 }
 .toothless .horn-main-r {
   right: 20px; top: -45px; width: 45px; height: 100px;
-  border-radius: 20% 80% 0 0 / 40% 80% 0 0; transform: rotate(35deg);
+  border-radius: 15% 85% 0 0 / 30% 80% 0 0; transform: rotate(32deg);
 }
-.toothless .horn-sub-l1 { left: -10px; top: 35px; width: 35px; height: 40px; border-radius: 70% 30% 0 0; transform: rotate(-75deg); }
-.toothless .horn-sub-r1 { right: -10px; top: 35px; width: 35px; height: 40px; border-radius: 30% 70% 0 0; transform: rotate(75deg); }
+.toothless .horn-sub-l1 { left: -10px; top: 35px; width: 35px; height: 40px; border-radius: 75% 25% 0 0; transform: rotate(-72deg); }
+.toothless .horn-sub-r1 { right: -10px; top: 35px; width: 35px; height: 40px; border-radius: 25% 75% 0 0; transform: rotate(72deg); }
 .toothless .horn-sub-l2 { left: 45px; top: -20px; width: 20px; height: 35px; border-radius: 50% 50% 0 0; transform: rotate(-15deg); }
 .toothless .horn-sub-r2 { right: 45px; top: -20px; width: 20px; height: 35px; border-radius: 50% 50% 0 0; transform: rotate(15deg); }
 
-/* Glowing Green Cat Eyes */
+/* Glowing Green Cat Eyes (Almond shape with realistic gradients) */
 .toothless .toothless-eye {
   position: absolute; top: 62px; width: 55px; height: 46px;
-  background: radial-gradient(circle at 35% 35%, #a3cb38 0%, var(--t-eye-green) 55%, #1b8a43 100%);
+  background: radial-gradient(circle at 40% 40%, #e2fc2d 0%, #7bed0e 45%, #056627 88%, #023814 100%);
   border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
   overflow: hidden; z-index: 12;
-  box-shadow: 0 0 15px rgba(46, 204, 113, 0.4), inset -2px -2px 8px rgba(0,0,0,0.4);
+  box-shadow: 
+    0 0 12px rgba(46, 204, 113, 0.35), 
+    inset -3px -3px 8px rgba(0,0,0,0.65),
+    inset 3px 3px 6px rgba(255,255,255,0.15);
   transition: box-shadow 0.4s ease;
 }
 .toothless .eye-l { left: 34px; transform: rotate(10deg); }
@@ -1169,7 +1179,7 @@ input[name="nav"] {
 .toothless .t-pupil {
   position: absolute; top: 10%; left: 50%; transform: translateX(-50%);
   width: 14px; height: 80%; background: var(--t-eye-pupil);
-  border-radius: 50% / 100%; box-shadow: 0 0 4px rgba(0,0,0,0.8);
+  border-radius: 50% / 100%; box-shadow: 0 0 4px rgba(0,0,0,0.9);
   animation: toothlessPupilNarrow 6s infinite ease-in-out;
 }
 .toothless .t-glint {
@@ -1178,7 +1188,7 @@ input[name="nav"] {
 }
 .toothless .toothless-eyelid {
   position: absolute; top: -100%; left: 0; width: 100%; height: 100%;
-  background: var(--t-black); border-bottom: 2px solid var(--t-black-dark);
+  background: var(--t-black-dark); border-bottom: 2px solid var(--t-black);
   animation: blinkEye 4.5s infinite linear;
 }
 
@@ -1202,13 +1212,18 @@ input[name="nav"] {
   opacity: 1;
 }
 
-/* Body & Bioluminescent Glow Veins */
+/* Body with detailed scale texture overlays */
 .toothless .toothless-body {
   position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%);
   width: 160px; height: 170px;
-  background: radial-gradient(circle at 40% 30%, var(--t-black-light) 0%, var(--t-black) 55%, var(--t-black-dark) 100%);
+  background: 
+    repeating-linear-gradient(45deg, transparent, transparent 6px, rgba(255, 255, 255, 0.01) 6px, rgba(255, 255, 255, 0.01) 8px),
+    radial-gradient(circle at 40% 30%, var(--t-black-light) 0%, var(--t-black) 55%, var(--t-black-dark) 100%);
   border-radius: 80px 80px 60px 60px / 100px 100px 70px 70px;
-  z-index: 7; box-shadow: inset 6px 6px 12px rgba(255,255,255,0.08);
+  z-index: 7; 
+  box-shadow: 
+    inset 6px 6px 12px rgba(255,255,255,0.06),
+    inset -8px -8px 15px rgba(0,0,0,0.65);
   overflow: hidden;
 }
 .toothless .body-glow-veins {
