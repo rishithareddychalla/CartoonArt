@@ -1233,7 +1233,7 @@ input[name="nav"] {
   opacity: 1;
 }
 
-/* Body with Scale Texture */
+/* Body with Scale Texture (visible overflow to show arms/legs) */
 .toothless .toothless-body {
   position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%);
   width: 160px; height: 170px;
@@ -1247,7 +1247,7 @@ input[name="nav"] {
     inset 8px 8px 15px rgba(255, 255, 255, 0.06), 
     inset -8px -8px 15px rgba(0, 0, 0, 0.8),
     0 10px 20px rgba(0,0,0,0.3);
-  overflow: hidden;
+  overflow: visible;
 }
 .toothless .body-glow-veins {
   position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
@@ -1256,40 +1256,54 @@ input[name="nav"] {
   mix-blend-mode: screen; opacity: 0; filter: blur(3px);
   transition: opacity 0.5s ease;
   animation: glowVeinsPulse 2s infinite ease-in-out;
+  border-radius: 50%;
 }
 .toothless:hover .body-glow-veins,
 .toothless:active .body-glow-veins {
   opacity: 1;
 }
 
-/* Arms and claws */
-.toothless .d-arm {
-  position: absolute; width: 35px; height: 95px;
+/* Arms, Legs, and Claws styling */
+.toothless .d-arm,
+.toothless .d-leg {
+  position: absolute;
   background: 
     repeating-linear-gradient(45deg, rgba(255,255,255,0.01) 0px, rgba(255,255,255,0.01) 1px, transparent 1px, transparent 4px),
     radial-gradient(ellipse at center, var(--t-black) 0%, var(--t-black-dark) 100%);
-  border-radius: 17px; z-index: 5;
-  box-shadow: inset -2px -2px 6px rgba(0,0,0,0.6);
-}
-.toothless .arm-l { left: -10px; top: 25px; transform: rotate(20deg); transform-origin: top center; animation: armSwayLeft 5s infinite ease-in-out; }
-.toothless .arm-r { right: -10px; top: 25px; transform: rotate(-20deg); transform-origin: top center; animation: armSwayRight 5s infinite ease-in-out; }
-.toothless .d-arm .claws {
-  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
-  width: 25px; height: 6px; display: flex; justify-content: space-between;
-}
-.toothless .d-arm .claws::before,
-.toothless .d-arm .claws::after {
-  content: ''; width: 4px; height: 6px; background: #fff; border-radius: 50% 50% 0 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  box-shadow: inset -2px -2px 6px rgba(0,0,0,0.6), 0 4px 8px rgba(0,0,0,0.3);
 }
 
-/* Wings (Behind) */
+.toothless .d-arm {
+  width: 34px; height: 95px; border-radius: 17px; z-index: 8;
+}
+.toothless .arm-l { left: -12px; top: 30px; transform: rotate(18deg); transform-origin: top center; animation: armSwayLeft 5s infinite ease-in-out; }
+.toothless .arm-r { right: -12px; top: 30px; transform: rotate(-18deg); transform-origin: top center; animation: armSwayRight 5s infinite ease-in-out; }
+
+.toothless .d-leg {
+  width: 40px; height: 80px; border-radius: 20px; z-index: 6;
+}
+.toothless .leg-l { left: 16px; bottom: -30px; transform: rotate(15deg); }
+.toothless .leg-r { right: 16px; bottom: -30px; transform: rotate(-15deg); }
+
+/* Claws (renders 3 white claws using shadows) */
+.toothless .claws {
+  position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%);
+  width: 24px; height: 8px; z-index: 9;
+}
+.toothless .claws::before {
+  content: ''; position: absolute; left: 50%; transform: translateX(-50%);
+  width: 4px; height: 7px; background: #fff; border-radius: 50% 50% 0 0;
+  box-shadow: -6px 1px 0 #fff, 6px 1px 0 #fff, 0 1px 2px rgba(0,0,0,0.4);
+}
+
+/* Wings (Behind) aligned side-by-side */
 .toothless .dragon-wings {
-  position: absolute; top: 90px; left: 50%; transform: translateX(-50%);
-  width: 360px; height: 160px; z-index: -2;
+  position: absolute; top: 85px; left: 50%; transform: translateX(-50%);
+  width: 380px; height: 160px; z-index: -2;
+  display: flex; justify-content: space-between;
 }
 .toothless .d-wing {
-  position: relative; width: 170px; height: 110px;
+  position: relative; width: 180px; height: 120px;
   background: 
     repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.008) 0px, rgba(255, 255, 255, 0.008) 1px, transparent 1px, transparent 4px),
     radial-gradient(ellipse at center, var(--t-black-light) 0%, var(--t-black-dark) 100%);
@@ -1297,13 +1311,13 @@ input[name="nav"] {
   overflow: hidden;
 }
 .toothless .wing-l {
-  left: 0; border-radius: 150px 20px 80px 20px;
-  transform: rotate(-15deg); transform-origin: bottom right;
+  border-radius: 150px 20px 80px 20px;
+  transform: rotate(-12deg); transform-origin: bottom right;
   animation: wingFlapL 6s infinite ease-in-out;
 }
 .toothless .wing-r {
-  right: 0; border-radius: 20px 150px 20px 80px;
-  transform: rotate(15deg); transform-origin: bottom left;
+  border-radius: 20px 150px 20px 80px;
+  transform: rotate(12deg); transform-origin: bottom left;
   animation: wingFlapR 6s infinite ease-in-out;
 }
 
@@ -1321,14 +1335,15 @@ input[name="nav"] {
 
 /* Tail & Spikes & Prosthetic Fin */
 .toothless .dragon-tail {
-  position: absolute; bottom: 50px; left: -100px;
-  width: 200px; height: 150px; z-index: -3;
-  transform-origin: bottom right; animation: tailWag 5s infinite ease-in-out;
+  position: absolute; bottom: 55px; left: 50%; transform: translateX(-70%);
+  width: 180px; height: 120px; z-index: -3;
+  transform-origin: right center; animation: tailWag 6s infinite ease-in-out;
 }
 .toothless .tail-body {
-  position: absolute; bottom: 0; right: 0; width: 150px; height: 40px;
+  position: absolute; bottom: 10px; left: 15px; width: 140px; height: 35px;
   background: radial-gradient(ellipse at center, var(--t-black) 0%, var(--t-black-dark) 100%);
-  border-radius: 50%; transform: rotate(15deg);
+  border-radius: 50% 20% 20% 50% / 50% 50% 50% 50%;
+  transform: rotate(-12deg);
   display: flex; gap: 15px; padding-left: 20px; align-items: center;
 }
 .toothless .tail-spike {
@@ -1338,13 +1353,13 @@ input[name="nav"] {
 }
 
 .toothless .tail-fin-l {
-  position: absolute; left: 15px; bottom: 10px; width: 45px; height: 40px;
-  background: var(--t-black-dark); border-radius: 50% 0 50% 50%;
-  transform: rotate(-30deg);
+  position: absolute; left: -15px; bottom: 15px; width: 50px; height: 35px;
+  background: var(--t-black-dark); border-radius: 80% 0 50% 50%;
+  transform: rotate(-25deg);
 }
 .toothless .tail-fin-r {
-  position: absolute; left: 40px; bottom: -5px; width: 45px; height: 40px;
-  border-radius: 0 50% 50% 50%; transform: rotate(10deg);
+  position: absolute; left: -15px; bottom: -5px; width: 50px; height: 35px;
+  border-radius: 0 80% 50% 50%; transform: rotate(25deg);
 }
 .toothless .prosthetic-red {
   background: radial-gradient(circle at center, #ff7675 0%, var(--t-prosthetic) 75%, #c0392b 100%);
