@@ -264,6 +264,8 @@
         <div class="groot">
           <!-- Wooden Head -->
           <div class="groot-head">
+            <!-- Moss on top of head -->
+            <div class="head-moss"></div>
             <div class="head-top-bark">
               <div class="bark-sprout s1"></div>
               <div class="bark-sprout s2"></div>
@@ -271,30 +273,59 @@
               <div class="bark-sprout s4"></div>
             </div>
             <!-- Eyes (Large glossy black) -->
-            <div class="groot-eye eye-l"><div class="groot-glint main"></div><div class="groot-glint sub"></div></div>
-            <div class="groot-eye eye-r"><div class="groot-glint main"></div><div class="groot-glint sub"></div></div>
-            <!-- Eyebrows / Bark lines -->
+            <div class="groot-eye eye-l">
+              <div class="groot-glint main"></div>
+              <div class="groot-glint sub"></div>
+              <div class="groot-eye-shadow"></div>
+            </div>
+            <div class="groot-eye eye-r">
+              <div class="groot-glint main"></div>
+              <div class="groot-glint sub"></div>
+              <div class="groot-eye-shadow"></div>
+            </div>
+            <!-- Eyebrows / Bark ridges -->
             <div class="groot-brow brow-l"></div>
             <div class="groot-brow brow-r"></div>
-            <!-- Mouth -->
-            <div class="groot-mouth"></div>
-            <!-- Wood textures / lines -->
+            <!-- Smile -->
+            <div class="groot-mouth">
+              <div class="groot-mouth-inner"></div>
+            </div>
+            <!-- Wood textures / cracks / lines -->
             <div class="wood-line wl-1"></div>
             <div class="wood-line wl-2"></div>
             <div class="wood-line wl-3"></div>
-            <!-- Sprouting leaf -->
-            <div class="head-leaf"></div>
+            <div class="wood-crack wc-1"></div>
+            <div class="wood-crack wc-2"></div>
+            <!-- Sprouting leaves -->
+            <div class="head-leaf hl-1"></div>
+            <div class="head-leaf hl-2"></div>
           </div>
           <!-- Wooden Body -->
           <div class="groot-body">
             <div class="vines-wrap">
               <div class="vine v1"></div>
               <div class="vine v2"></div>
+              <div class="vine v3"></div>
             </div>
-            <div class="groot-arm arm-l"><div class="leaf l1"></div></div>
-            <div class="groot-arm arm-r"><div class="leaf l2"></div></div>
-            <div class="groot-leg leg-l"></div>
-            <div class="groot-leg leg-r"></div>
+            <!-- Left Arm with leaves -->
+            <div class="groot-arm arm-l">
+              <div class="leaf l1"></div>
+              <div class="leaf l2"></div>
+              <div class="leaf l3"></div>
+            </div>
+            <!-- Right Arm with leaves -->
+            <div class="groot-arm arm-r">
+              <div class="leaf l4"></div>
+              <div class="leaf l5"></div>
+              <div class="leaf l6"></div>
+            </div>
+            <!-- Wooden Legs -->
+            <div class="groot-leg leg-l">
+              <div class="leaf l7"></div>
+            </div>
+            <div class="groot-leg leg-r">
+              <div class="leaf l8"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -304,21 +335,41 @@
            ========================================== -->
       <div class="character-wrapper toothless-wrap">
         <div class="toothless">
-          <!-- Wings (Background) -->
+          <!-- Wings with structured bone elements -->
           <div class="dragon-wings">
-            <div class="d-wing wing-l"></div>
-            <div class="d-wing wing-r"></div>
+            <div class="d-wing wing-l">
+              <div class="wing-bone wb-1"></div>
+              <div class="wing-bone wb-2"></div>
+              <div class="wing-bone wb-3"></div>
+            </div>
+            <div class="d-wing wing-r">
+              <div class="wing-bone wb-1"></div>
+              <div class="wing-bone wb-2"></div>
+              <div class="wing-bone wb-3"></div>
+            </div>
           </div>
-          <!-- Tail with Red Prosthetic Fin -->
+          <!-- Tail with Red Prosthetic Fin & Spikes -->
           <div class="dragon-tail">
-            <div class="tail-body"></div>
+            <div class="tail-body">
+              <div class="tail-spike ts-1"></div>
+              <div class="tail-spike ts-2"></div>
+              <div class="tail-spike ts-3"></div>
+            </div>
             <div class="tail-fin-l"></div>
             <div class="tail-fin-r prosthetic-red">
               <div class="prosthetic-emblem"></div>
             </div>
           </div>
-          <!-- Head / Horns -->
+          <!-- Head / Horns / Scales -->
           <div class="toothless-head">
+            <!-- Bioluminescent charging scales -->
+            <div class="scales-group">
+              <div class="t-scale ts-head-1"></div>
+              <div class="t-scale ts-head-2"></div>
+              <div class="t-scale ts-head-3"></div>
+              <div class="t-scale ts-head-4"></div>
+              <div class="t-scale ts-head-5"></div>
+            </div>
             <!-- Ears/Horns -->
             <div class="d-horn horn-main-l"></div>
             <div class="d-horn horn-main-r"></div>
@@ -343,12 +394,20 @@
             </div>
             <!-- Nose / Snout -->
             <div class="toothless-snout"></div>
-            <div class="toothless-mouth"></div>
+            <div class="toothless-mouth">
+              <!-- Inside of mouth glows blue when charging plasma blast -->
+              <div class="mouth-plasma-glow"></div>
+            </div>
           </div>
           <!-- Body -->
           <div class="toothless-body">
-            <div class="d-arm arm-l"></div>
-            <div class="d-arm arm-r"></div>
+            <div class="body-glow-veins"></div>
+            <div class="d-arm arm-l">
+              <div class="claws"></div>
+            </div>
+            <div class="d-arm arm-r">
+              <div class="claws"></div>
+            </div>
           </div>
         </div>
       </div>
